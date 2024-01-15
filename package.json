@@ -1,0 +1,22 @@
+{
+  "name": "rda-tiger-annotation-extension",
+  "version": "1.0.0",
+  "description": "The 'RDA Tiger Annotation Extension' is a specialized tool developed for the Research Data Alliance (RDA) community. Its primary function is to assist in annotating web resources consistently and systematically. This extension allows users to easily integrate their annotations with the search facilities of RDA projects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DANS-KNAW",
+  "contributors": [
+    {
+      "name": "Joonas Kesäniemi",
+      "url": "https://github.com/jkesanie"
+    },
+    {
+      "name": "Laurens Tobias",
+      "email": "laurens.tobias@dans.knaw.nl",
+      "url": "https://github.com/AnonymousSmurf"
+    }
+  ],
+  "license": "ISC"
+}
