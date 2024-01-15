@@ -7,9 +7,9 @@
     "default_popup": "popup.html"
   },
   "icons": {
-    "32": "icon-32.png",
-    "72": "icon-72.png",
-    "128": "icon-128.png",
-    "512": "icon-512.png"
+    "32": "assets/icon-32.png",
+    "72": "assets/icon-72.png",
+    "128": "assets/icon-128.png",
+    "512": "assets/icon-512.png"
   }
 }
