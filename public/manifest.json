@@ -1,11 +1,8 @@
 {
-  "name": "JUFO Level info",
-  "version": "1.0",
   "manifest_version": 3,
-  "permissions": [
-    "activeTab",
-    "scripting"   
-  ],
+  "name": "RDA Tiger Annotation Extension",
+  "version": "1.0",
+  "permissions": ["activeTab", "scripting"],
   "action": {
     "default_popup": "popup.html"
   },
