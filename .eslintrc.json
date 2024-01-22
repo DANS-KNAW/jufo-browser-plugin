@@ -1,6 +1,9 @@
 {
-  "extends": ["airbnb", "airbnb-typescript"],
+  "extends": ["airbnb", "airbnb-typescript", "plugin:tailwindcss/recommended"],
   "parserOptions": {
     "project": "./tsconfig.json"
+  },
+  "rules": {
+    "tailwindcss/classnames-order": "error"
   }
 }
