@@ -17,6 +17,13 @@ const defaultNavigationContext: NavigationContextProps = {
   currentTab: "",
 };
 
+/**
+ * NavigationContext is used to manage the state of the navigation tabs
+ * 
+ * @param tabs - Array of NavigationTabs
+ * @param setActiveTabs - Function to set the active tab
+ * @param currentTab - The current active tab
+ */
 export const NavigationContext = createContext<NavigationContextProps>(
   defaultNavigationContext
 );

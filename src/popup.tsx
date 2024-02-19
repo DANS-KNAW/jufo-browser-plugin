@@ -7,6 +7,7 @@ import useGrabAnnotation from "./hooks/useAnnotation";
 import Annotation from "./views/Annotation";
 import Vocabularies from "./views/Vocabularies";
 import { NavigationContext } from "./context/Navigation";
+import Settings from "./views/Settings";
 
 function App() {
   const tab = useFetchTab();
@@ -96,6 +97,7 @@ function App() {
             <Annotation tabUrl={tab.tabUrl} annotation={annotation} />
           )}
           {activeTab === "Vocabularies" && <Vocabularies />}
+          {activeTab === "Settings" && <Settings />}
         </TabView>
       </main>
     </NavigationContext.Provider>
