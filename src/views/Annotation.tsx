@@ -13,10 +13,10 @@ import {
 function Annotation({
   tabUrl,
   annotation,
-}: {
+}: Readonly<{
   tabUrl: string;
   annotation: string;
-}) {
+}>) {
   const [formData, setFormData] = useState<{ [key: string]: any }>();
   const [submitting, setSubmitting] = useState(false);
 
