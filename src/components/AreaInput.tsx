@@ -1,40 +1,49 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { TextAreaInputProps } from '../types/formTypes';
 
 function AreaInput({
+  type,
   label,
   placeholder,
   value,
   disabled,
   required,
-  section,
-}: Readonly<{
-  label: string;
-  placeholder?: string;
-  value?: string;
-  disabled?: boolean;
-  required?: boolean;
-  section?: 'bottom' | 'middle' | 'top';
-}>) {
+  rounded,
+  onChange,
+}: Readonly<TextAreaInputProps>) {
+  const [inputValue, setValue] = React.useState(value ?? "");
   const internalIDs = label.toLowerCase().split(' ').join('_');
 
-  let rounded = '';
-  switch (section) {
+    // Triggering useEffect hook on mount once to populate initial empty onChange callback.
+    useEffect(() => {
+      if (value !== undefined) {
+        onChange(internalIDs, value);
+      }
+    }, []);
+
+    const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+      onChange(internalIDs, e.target.value);
+      setValue(e.target.value);
+    };
+
+  let section = '';
+  switch (rounded) {
     case 'bottom':
-      rounded = 'rounded-b-md';
+      section = 'rounded-b-md';
       break;
     case 'middle':
       break;
     case 'top':
-      rounded = 'rounded-t-md';
+      section = 'rounded-t-md';
       break;
     default:
-      rounded = 'rounded-md';
+      section = 'rounded-md';
       break;
   }
 
   return (
     <div
-      className={`${rounded} px-3 pb-1.5 pt-2.5 shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-rda-600 has-[:disabled]:bg-gray-200`}
+      className={`${section} px-3 pb-1.5 pt-2.5 shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-rda-600 has-[:disabled]:bg-gray-200`}
     >
       <label htmlFor={internalIDs} className="block text-xs text-gray-900">
         <span className="font-medium">{label}</span>
@@ -48,6 +57,8 @@ function AreaInput({
           disabled={disabled}
           required={required}
           placeholder={placeholder}
+          onChange={handleChange}
+          value={inputValue}
         />
       </label>
     </div>
