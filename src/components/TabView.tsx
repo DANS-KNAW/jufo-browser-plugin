@@ -1,12 +1,8 @@
-import React from "react";
-
-const tabs = [
-  { label: "Annotation", active: true },
-  { label: "Vocabularies", active: false },
-  { label: "Settings", active: false },
-];
+import React, { useContext } from "react";
+import { NavigationContext } from "../context/Navigation";
 
 function TabView({ children }: Readonly<{ children: React.ReactNode }>) {
+  const navigationContext = useContext(NavigationContext);
   return (
     <>
       <section className="pt-2">
@@ -15,22 +11,21 @@ function TabView({ children }: Readonly<{ children: React.ReactNode }>) {
           <img className="h-24" src="/assets/tiger.png" alt="TIGER" />
         </div>
         <nav className="flex " aria-label="Tabs">
-          {tabs.map((tab) => (
+          {navigationContext.tabs.map((tab) => (
             <button
+              onClick={() => navigationContext.setActiveTabs(tab.label)}
               type="button"
               key={tab.label}
               className={`${
-                tab.active
-                  ? 'text-rda-500'
-                  : ''
+                tab.active ? "text-rda-500" : ""
               } group relative min-w-0 flex-1 overflow-hidden p-4 text-center text-sm font-bold text-gray-900 hover:text-rda-500 focus:z-10`}
-              aria-current={tab.active ? 'page' : undefined}
+              aria-current={tab.active ? "page" : undefined}
             >
               <span>{tab.label}</span>
               <span
                 aria-hidden="true"
                 className={`${
-                  tab.active ? 'bg-rda-500' : 'bg-transparent'
+                  tab.active ? "bg-rda-500" : "bg-transparent"
                 } absolute inset-x-0 bottom-0 h-0.5`}
               />
             </button>
