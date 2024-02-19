@@ -137,7 +137,7 @@ function LookupInput({
                 onChange(internalIDs, selectedItems);
               }}
               type="button"
-              className="inline-flex items-center rounded-md bg-rda-50 px-2 py-1 text-xs font-medium text-rda-400 ring-1 ring-inset ring-rda-400/10 hover:bg-rda-100 hover:text-rda-600 disabled:hover:text-rda-400 disabled:cursor-not-allowed disabled:bg-rda-50"
+              className="inline-flex items-center rounded-md bg-rda-50 px-2 py-1 text-xs font-medium text-rda-500 ring-1 ring-inset ring-rda-500/10 hover:bg-rda-100 hover:text-rda-600 disabled:hover:text-rda-500 disabled:cursor-not-allowed disabled:bg-rda-50"
             >
               {item.label} X
             </button>
@@ -170,7 +170,7 @@ function LookupInput({
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 16 16"
             fill="currentColor"
-            className={`size-5 ${isValid ? "text-red-400" : "text-rda-400"}`}
+            className={`size-5 ${isValid ? "text-red-400" : "text-rda-500"}`}
             aria-hidden="true"
           >
             <path
@@ -186,7 +186,7 @@ function LookupInput({
             {filteredItems.map((item, i) => (
               <li
                 key={i}
-                className="relative cursor-default select-none py-2 px-3 hover:bg-rda-400 hover:text-white hover:cursor-pointer"
+                className="relative cursor-default select-none py-2 px-3 hover:bg-rda-500 hover:text-white hover:cursor-pointer"
                 onClick={() => {
                   if (
                     !selectedItems.some((i) => i.id === item.id) &&

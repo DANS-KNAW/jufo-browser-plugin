@@ -236,7 +236,7 @@ function App() {
           <button
             type="submit"
             disabled={submitting}
-            className="bg-rda-400 text-white font-bold px-4 py-2 rounded-md w-full hover:bg-rda-500 disabled:hover:bg-rda-400 text-xl disabled:opacity-50 disabled:cursor-not-allowed"
+            className="bg-rda-500 text-white font-bold px-4 py-2 rounded-md w-full hover:bg-rda-400 disabled:hover:bg-rda-500 text-xl disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {submitting ? "Submited" : "Submit"}
           </button>
