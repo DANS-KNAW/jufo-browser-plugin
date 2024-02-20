@@ -1,12 +1,20 @@
 import React, { useContext } from "react";
 import TextInput from "../components/form/TextInput";
 import { SettingsContext } from "../context/Settings";
+import debounce from "debounce";
 
 function Settings() {
   const { settings, setSettings } = useContext(SettingsContext);
   const [customAPIkeyValue, setCustomAPIkeyValue] = React.useState(
     settings.customHypothesisKey
   );
+
+  const changeAPIkey = (value: string) => {
+    setSettings({ ...settings, customHypothesisKey: value });
+  };
+
+  const debouncedChangeAPIkey = debounce(changeAPIkey, 300);
+
   return (
     <>
       <h2 className="pr-4 text-xl font-bold">Settings</h2>
@@ -72,7 +80,7 @@ function Settings() {
               <TextInput
                 label="Hypthosis API KEY"
                 value={customAPIkeyValue}
-                onChange={() => setCustomAPIkeyValue}
+                onChange={(key, value) => debouncedChangeAPIkey(value)}
               />
             )}
           </>
