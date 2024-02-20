@@ -8,10 +8,12 @@ import Annotation from "./views/Annotation";
 import Vocabularies from "./views/Vocabularies";
 import { NavigationContext } from "./context/Navigation";
 import Settings from "./views/Settings";
+import useChromeStorage from "./hooks/useChromeStorage";
 
 function App() {
   const tab = useFetchTab();
   const annotation = useGrabAnnotation(tab.tabId);
+  const storage = useChromeStorage("settings");
   const [activeTab, setActiveTab] = React.useState("Annotation");
 
   const [tabs, setTabs] = React.useState([
@@ -54,7 +56,9 @@ function App() {
   // }
 
   return (
-    <NavigationContext.Provider value={{ tabs, setActiveTabs, currentTab: activeTab }}>
+    <NavigationContext.Provider
+      value={{ tabs, setActiveTabs, currentTab: activeTab }}
+    >
       <main className="flex h-screen w-full flex-col">
         <TabView>
           {activeTab === "Annotation" && !annotation && (
