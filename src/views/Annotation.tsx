@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import AreaInput from "../components/AreaInput";
 import LookupInput from "../components/form/LookupInput";
 import TextInput from "../components/form/TextInput";
 import {
   language,
   pathways,
-  gorc,
+  gorcElements,
+  gorcAttributes,
   interestgroups,
   domains,
+  workingGroups,
 } from "../data/data";
+import { SettingsContext } from "../context/Settings";
 
 function Annotation({
   tabUrl,
@@ -17,6 +20,7 @@ function Annotation({
   tabUrl: string;
   annotation: string;
 }>) {
+  const { settings } = useContext(SettingsContext);
   const [formData, setFormData] = useState<{ [key: string]: any }>();
   const [submitting, setSubmitting] = useState(false);
 
@@ -48,6 +52,8 @@ function Annotation({
     });
     console.log(response);
   };
+
+  const vocabularies = settings.vocabularies;
   return (
     <>
       <h2 className="pr-4 text-xl font-bold">Resource Metadata</h2>
@@ -125,58 +131,96 @@ function Annotation({
 
         <h3 className="text-base font-bold">Coverage</h3>
         <div className="-space-y-px">
-          <LookupInput
-            type="lookup"
-            label="Pathways"
-            onChange={handleChange}
-            rounded="top"
-            dataset={pathways.map((p) => ({
-              id: p.id,
-              label: p.title,
-              value: p.id,
-            }))}
-            multiple
-            disabled={submitting}
-          />
-          <LookupInput
-            type="lookup"
-            label="GORC"
-            onChange={handleChange}
-            rounded="middle"
-            dataset={gorc.map((g) => ({
-              id: g.id,
-              label: g.title,
-              value: g.id,
-            }))}
-            multiple
-            disabled={submitting}
-          />
-          <LookupInput
-            type="lookup"
-            label="Origin"
-            onChange={handleChange}
-            rounded="middle"
-            dataset={interestgroups.map((ig) => ({
-              id: ig.id,
-              label: ig.title,
-              value: ig.id,
-            }))}
-            multiple
-            disabled={submitting}
-          />
-          <LookupInput
-            type="lookup"
-            label="Domain"
-            onChange={handleChange}
-            rounded="bottom"
-            dataset={domains.map((d) => ({
-              id: d.id,
-              label: d.title,
-              value: d.id,
-            }))}
-            multiple
-            disabled={submitting}
-          />
+          {vocabularies.pathways && (
+            <LookupInput
+              type="lookup"
+              label="Pathways"
+              onChange={handleChange}
+              rounded="top"
+              dataset={pathways.map((pathway, index) => ({
+                id: `${index}`,
+                label: pathway.pathway,
+                value: pathway.tags,
+              }))}
+              multiple
+              disabled={submitting}
+            />
+          )}
+          {vocabularies.gorcAttributes && (
+            <LookupInput
+              type="lookup"
+              label="GORC Attributes"
+              onChange={handleChange}
+              rounded="middle"
+              dataset={gorcAttributes.map((attributes, index) => ({
+                id: `${index}`,
+                label: attributes.attribute,
+                value: attributes.attribute,
+              }))}
+              multiple
+              disabled={submitting}
+            />
+          )}
+          {vocabularies.gorcElements && (
+            <LookupInput
+              type="lookup"
+              label="GORC Elements"
+              onChange={handleChange}
+              rounded="middle"
+              dataset={gorcElements.map((elements, index) => ({
+                id: `${index}`,
+                label: elements.element,
+                value: elements.element,
+              }))}
+              multiple
+              disabled={submitting}
+            />
+          )}
+          {vocabularies.interestGroups && (
+            <LookupInput
+              type="lookup"
+              label="Origin"
+              onChange={handleChange}
+              rounded="middle"
+              dataset={interestgroups.map((interestGroup) => ({
+                id: interestGroup.ig_UUID,
+                label: interestGroup.Title,
+                value: interestGroup.ig_UUID,
+              }))}
+              multiple
+              disabled={submitting}
+            />
+          )}
+          {vocabularies.workingGroups && (
+            <LookupInput
+              type="lookup"
+              label="Working Groups"
+              onChange={handleChange}
+              rounded="middle"
+              dataset={workingGroups.map((workingGroups) => ({
+                id: workingGroups.g_UUID,
+                label: workingGroups.Title,
+                value: workingGroups.g_UUID,
+              }))}
+              multiple
+              disabled={submitting}
+            />
+          )}
+          {vocabularies.domain && (
+            <LookupInput
+              type="lookup"
+              label="Domains"
+              onChange={handleChange}
+              rounded="bottom"
+              dataset={domains.map((domain) => ({
+                id: domain.uuid,
+                label: domain.domain,
+                value: domain.uuid,
+              }))}
+              multiple
+              disabled={submitting}
+            />
+          )}
         </div>
 
         <button
