@@ -40,7 +40,7 @@ function Annotation({
       method: "POST",
       headers: {
         "Content-Type": "application/vnd.hypothesis.v1+json",
-        Authorization: `Bearer ${formData!.hypothesis_api_key}`,
+        Authorization: `Bearer ${settings.customHypothesisKey}`,
       },
       body: JSON.stringify({
         uri: tabUrl,
@@ -58,13 +58,6 @@ function Annotation({
     <>
       <h2 className="pr-4 text-xl font-bold">Resource Metadata</h2>
       <form className="my-4 space-y-4 pr-[1px]" onSubmit={handleSubmit}>
-        <TextInput
-          type="text"
-          label="Hypothesis API KEY"
-          onChange={handleChange}
-          required
-          disabled={submitting}
-        />
         <AreaInput
           type="textarea"
           label="Annotation"
@@ -229,7 +222,12 @@ function Annotation({
 
         <button
           type="submit"
-          disabled={submitting}
+          disabled={
+            submitting ||
+            settings.customHypothesisKey === "" ||
+            settings.useCustomHypothesisKey === false ||
+            settings.mirrorHypothesis === false
+          }
           className="bg-rda-500 text-white font-bold px-4 py-2 rounded-md w-full hover:bg-rda-400 disabled:hover:bg-rda-500 text-xl disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {submitting ? "Submited" : "Submit"}
