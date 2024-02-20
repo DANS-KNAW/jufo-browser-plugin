@@ -182,11 +182,11 @@ function LookupInput({
         </button>
 
         {isListVisible && filteredItems.length > 0 && (
-          <ul className="shadow-lg focus:outline-none absolute z-10 mt-1 max-h-32 w-full overflow-auto rounded-md bg-white py-1 text-sm">
+          <ul className="shadow-lg divide-y divide-gray-300 focus:outline-none absolute z-10 mt-1 max-h-32 w-full overflow-auto rounded-md bg-white py-1 text-sm">
             {filteredItems.map((item, i) => (
               <li
                 key={i}
-                className="relative cursor-default select-none py-2 px-3 hover:bg-rda-500 hover:text-white hover:cursor-pointer"
+                className="relative cursor-default select-none py-2 px-3 hover:bg-rda-500 hover:text-white hover:cursor-pointer group"
                 onClick={() => {
                   if (
                     !selectedItems.some((i) => i.id === item.id) &&
@@ -208,7 +208,8 @@ function LookupInput({
                   }
                 }}
               >
-                {item.label}
+                <span className="text-gray-900 group-hover:text-white font-medium">{item.label}</span>
+                {item.description && <p className="text-gray-500 text-xs group-hover:text-white">{item.description}</p>}
               </li>
             ))}
           </ul>

@@ -139,7 +139,8 @@ function Annotation({
               rounded="top"
               dataset={pathways.map((pathway, index) => ({
                 id: `${index}`,
-                label: pathway.pathway,
+                label: pathway.tags,
+                description: pathway.pathway,
                 value: pathway.tags,
               }))}
               multiple
@@ -156,6 +157,7 @@ function Annotation({
                 id: `${index}`,
                 label: attributes.attribute,
                 value: attributes.attribute,
+                description: attributes.tags,
               }))}
               multiple
               disabled={submitting}
@@ -171,6 +173,7 @@ function Annotation({
                 id: `${index}`,
                 label: elements.element,
                 value: elements.element,
+                description: elements.tags,
               }))}
               multiple
               disabled={submitting}
@@ -186,6 +189,7 @@ function Annotation({
                 id: interestGroup.ig_UUID,
                 label: interestGroup.Title,
                 value: interestGroup.ig_UUID,
+                description: interestGroup.Description,
               }))}
               multiple
               disabled={submitting}

@@ -47,6 +47,7 @@ export type LookupDataset = Readonly<{
   label: string;
   value: string;
   url?: string;
+  description?: string;
 }>;
 
 export interface LookupInputProps extends CommonInputProps {
