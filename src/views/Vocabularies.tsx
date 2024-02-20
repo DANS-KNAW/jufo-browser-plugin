@@ -1,23 +1,64 @@
-import React from "react";
+import React, { useContext } from "react";
 import WorkingGroupsIcon from "../svg/WorkingGroupsIcon";
 import InterestGroupsIcon from "../svg/InterestGroupsIcon";
 import PathwaysIcon from "../svg/PathwaysIcon";
 import GORCElementsIcon from "../svg/GORCElementsIcon";
 import GORCAttributesIcon from "../svg/GORCAttributesIcon";
 import DomainIcon from "../svg/DomainIcon";
+import { SettingsContext } from "../context/Settings";
 
 function Vocabularies() {
+  const { settings, setSettings } = useContext(SettingsContext);
+
   const vocabOptions = [
-    { label: "Working Groups", icon: WorkingGroupsIcon },
-    { label: "Interest Groups", icon: InterestGroupsIcon },
-    { label: "Pathways", icon: PathwaysIcon },
-    { label: "GORC Elements", icon: GORCElementsIcon },
-    { label: "GORC Attributes", icon: GORCAttributesIcon },
-    { label: "Domain", icon: DomainIcon },
+    {
+      id: "workingGroups",
+      label: "Working Groups",
+      icon: WorkingGroupsIcon,
+      active: settings.vocabularies.workingGroups,
+    },
+    {
+      id: "interestGroups",
+      label: "Interest Groups",
+      icon: InterestGroupsIcon,
+      active: settings.vocabularies.interestGroups,
+    },
+    {
+      id: "pathways",
+      label: "Pathways",
+      icon: PathwaysIcon,
+      active: settings.vocabularies.pathways,
+    },
+    {
+      id: "gorcElements",
+      label: "GORC Elements",
+      icon: GORCElementsIcon,
+      active: settings.vocabularies.gorcElements,
+    },
+    {
+      id: "gorcAttributes",
+      label: "GORC Attributes",
+      icon: GORCAttributesIcon,
+      active: settings.vocabularies.gorcAttributes,
+    },
+    {
+      id: "domain",
+      label: "Domain",
+      icon: DomainIcon,
+      active: settings.vocabularies.domain,
+    },
   ];
 
   const Items = vocabOptions.map((item, index) => {
     const id = item.label.replace(/\s/g, "-").toLowerCase();
+
+    const setVocab = (active: boolean) => {
+      setSettings({
+        ...settings,
+        vocabularies: { ...settings.vocabularies, [item.id]: active },
+      });
+    };
+
     return (
       <div key={index} className="relative flex items-center px-4">
         <div className="min-w-0 flex-1 text-sm leading-6">
@@ -35,6 +76,8 @@ function Vocabularies() {
             name={id}
             type="checkbox"
             className="h-4 w-4 rounded border-gray-300 text-rda-500 focus:ring-rda-500"
+            checked={item.active}
+            onChange={() => setVocab(!item.active)}
           />
         </div>
       </div>
