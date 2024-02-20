@@ -2,13 +2,11 @@ import React, { useContext } from "react";
 import TextInput from "../components/form/TextInput";
 import { SettingsContext } from "../context/Settings";
 import debounce from "debounce";
+import LookupInput from "../components/form/LookupInput";
 
 function Settings() {
   const { settings, setSettings } = useContext(SettingsContext);
-  const [customAPIkeyValue, setCustomAPIkeyValue] = React.useState(
-    settings.customHypothesisKey
-  );
-
+  const [target, setTarget] = React.useState<string>("RDA_GRAPH");
   const changeAPIkey = (value: string) => {
     setSettings({ ...settings, customHypothesisKey: value });
   };
@@ -79,12 +77,21 @@ function Settings() {
             {settings.useCustomHypothesisKey && (
               <TextInput
                 label="Hypthosis API KEY"
-                value={customAPIkeyValue}
+                value={settings.customHypothesisKey}
                 onChange={(key, value) => debouncedChangeAPIkey(value)}
               />
             )}
           </>
         )}
+        <LookupInput
+          type="lookup"
+          label="Target for Annoations"
+          dataset={[
+            { id: "RDA_GRAPH", label: "RDA Graph", value: "RDA_GRAPH" },
+          ]}
+          onChange={(name, value) => setTarget(value)}
+          value="RDA Graph"
+        />
       </form>
     </>
   );
