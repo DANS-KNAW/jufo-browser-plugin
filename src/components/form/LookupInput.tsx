@@ -57,6 +57,12 @@ function LookupInput({
   });
   const [selectedItems, setSelectedItems] = React.useState<LookupDataset[]>([]);
 
+  useEffect(() => {
+    if (multiple) {
+      onChange(internalIDs, selectedItems);
+    }
+  }, [selectedItems]);
+
   const [isListVisible, setListVisible] = React.useState(false);
   const [filteredItems, setFilteredItems] =
     React.useState<LookupDataset[]>(dataset);
@@ -189,11 +195,12 @@ function LookupInput({
                 className="relative cursor-default select-none py-2 px-3 hover:bg-rda-500 hover:text-white hover:cursor-pointer group"
                 onClick={() => {
                   if (
-                    !selectedItems.some((i) => i.id === item.id) &&
+                    !selectedItems.some(
+                      (currentItems) => currentItems.id === item.id
+                    ) &&
                     multiple
                   ) {
-                    setSelectedItems([...selectedItems, item]);
-                    onChange(internalIDs, selectedItems);
+                    setSelectedItems((prevItems) => [...prevItems, item]);
                     handleQueryChange("");
                     setValue("");
                   }
@@ -208,8 +215,14 @@ function LookupInput({
                   }
                 }}
               >
-                <span className="text-gray-900 group-hover:text-white font-medium">{item.label}</span>
-                {item.description && <p className="text-gray-500 text-xs group-hover:text-white">{item.description}</p>}
+                <span className="text-gray-900 group-hover:text-white font-medium">
+                  {item.label}
+                </span>
+                {item.description && (
+                  <p className="text-gray-500 text-xs group-hover:text-white">
+                    {item.description}
+                  </p>
+                )}
               </li>
             ))}
           </ul>
