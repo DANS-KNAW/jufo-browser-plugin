@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 interface TabInfo {
   tabUrl?: string;
@@ -22,14 +22,14 @@ function useCurrentTabInfo(): TabInfo {
           currentWindow: true,
         });
         if (!tab || !tab.id || !tab.title || !tab.url) {
-          throw new Error("Active tab information is incomplete");
+          throw new Error('Active tab information is incomplete');
         }
 
         setTabInfo({ tabUrl: tab.url, tabTitle: tab.title, tabId: tab.id });
       } catch (err: unknown) {
         setTabInfo({
           error:
-            err instanceof Error ? err.message : "An unexpected error occurred",
+            err instanceof Error ? err.message : 'An unexpected error occurred',
         });
       }
     }

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 interface ChromeStorageState<T> {
   loading: boolean;
@@ -8,7 +8,7 @@ interface ChromeStorageState<T> {
 
 function useChromeStorage<T>(
   key: string,
-  defaultValue: T | null = null
+  defaultValue: T | null = null,
 ): ChromeStorageState<T> {
   const [data, setData] = useState<ChromeStorageState<T>>({
     loading: true,

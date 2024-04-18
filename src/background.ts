@@ -1,11 +1,11 @@
 chrome.runtime.onStartup.addListener(async () => {
-  let storage = await chrome.storage.sync.get("settings");
+  let storage = await chrome.storage.sync.get('settings');
 
-  if (!("settings" in storage)) {
+  if (!('settings' in storage)) {
     const settings = {
       mirrorHypothesis: true,
       useCustomHypothesisKey: true,
-      customHypothesisKey: "",
+      customHypothesisKey: '',
       vocabularies: {
         workingGroups: true,
         interestGroups: true,
@@ -15,9 +15,9 @@ chrome.runtime.onStartup.addListener(async () => {
         domain: true,
       },
     };
-    chrome.storage.sync.set({ settings }, () => console.log("Settings saved!"));
+    chrome.storage.sync.set({ settings }, () => console.log('Settings saved!'));
   }
 
-  storage = await chrome.storage.sync.get("settings");
+  storage = await chrome.storage.sync.get('settings');
   console.log(storage);
 });

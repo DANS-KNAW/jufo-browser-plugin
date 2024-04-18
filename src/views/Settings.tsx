@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
-import TextInput from "../components/form/TextInput";
-import { SettingsContext } from "../context/Settings";
-import debounce from "debounce";
-import LookupInput from "../components/form/LookupInput";
+import React, { useContext } from 'react';
+import debounce from 'debounce';
+import TextInput from '../components/form/TextInput';
+import { SettingsContext } from '../context/Settings';
+import LookupInput from '../components/form/LookupInput';
 
 function Settings() {
   const { settings, setSettings } = useContext(SettingsContext);
-  const [target, setTarget] = React.useState<string>("RDA_GRAPH");
+  const [target, setTarget] = React.useState<string>('RDA_GRAPH');
   const changeAPIkey = (value: string) => {
     setSettings({ ...settings, customHypothesisKey: value });
   };
@@ -24,14 +24,12 @@ function Settings() {
               aria-describedby="comments-description"
               name="comments"
               type="checkbox"
-              className="h-4 w-4 rounded border-gray-300 text-rda-500 focus:ring-rda-500"
+              className="size-4 rounded border-gray-300 text-rda-500 focus:ring-rda-500"
               checked={settings.mirrorHypothesis}
-              onChange={() =>
-                setSettings({
-                  ...settings,
-                  mirrorHypothesis: !settings.mirrorHypothesis,
-                })
-              }
+              onChange={() => setSettings({
+                ...settings,
+                mirrorHypothesis: !settings.mirrorHypothesis,
+              })}
             />
           </div>
           <div className="ml-3 text-sm leading-6">
@@ -52,13 +50,11 @@ function Settings() {
                   aria-describedby="custom-api-key-description"
                   name="custom-api-key"
                   type="checkbox"
-                  className="h-4 w-4 rounded border-gray-300 text-rda-500 focus:ring-rda-500"
-                  onChange={() =>
-                    setSettings({
-                      ...settings,
-                      useCustomHypothesisKey: !settings.useCustomHypothesisKey,
-                    })
-                  }
+                  className="size-4 rounded border-gray-300 text-rda-500 focus:ring-rda-500"
+                  onChange={() => setSettings({
+                    ...settings,
+                    useCustomHypothesisKey: !settings.useCustomHypothesisKey,
+                  })}
                   checked={settings.useCustomHypothesisKey}
                 />
               </div>
@@ -87,7 +83,7 @@ function Settings() {
           type="lookup"
           label="Target for Annoations"
           dataset={[
-            { id: "RDA_GRAPH", label: "RDA Graph", value: "RDA_GRAPH" },
+            { id: 'RDA_GRAPH', label: 'RDA Graph', value: 'RDA_GRAPH' },
           ]}
           onChange={(name, value) => setTarget(value)}
           value="RDA Graph"

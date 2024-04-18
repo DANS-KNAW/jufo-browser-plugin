@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import { TextAreaInputProps } from "../../types/formTypes";
-import BaseInput from "./BaseInput";
+import React, { useEffect } from 'react';
+import { TextAreaInputProps } from '../../types/formTypes';
+import BaseInput from './BaseInput';
 
 /**
  * A textarea input component.
@@ -33,7 +33,7 @@ import BaseInput from "./BaseInput";
  * @returns {JSX.Element} The text textarea component.
  */
 function AreaInput({
-  type = "textarea", // Used for type checking, later will be used for validation.
+  type = 'textarea', // Used for type checking, later will be used for validation.
   label,
   value,
   placeholder,
@@ -43,8 +43,8 @@ function AreaInput({
   rounded,
   rows = 4,
 }: TextAreaInputProps): JSX.Element {
-  const [inputValue, setValue] = React.useState(value ?? "");
-  const internalIDs = label.toLowerCase().split(" ").join("_");
+  const [inputValue, setValue] = React.useState(value ?? '');
+  const internalIDs = label.toLowerCase().split(' ').join('_');
 
   // Triggering useEffect hook on mount once to populate initial empty onChange callback.
   useEffect(() => {

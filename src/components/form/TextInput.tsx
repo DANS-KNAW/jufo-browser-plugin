@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import { TextInputProps } from "../../types/formTypes";
-import BaseInput from "./BaseInput";
+import React, { useEffect } from 'react';
+import { TextInputProps } from '../../types/formTypes';
+import BaseInput from './BaseInput';
 
 /**
  * A text input component.
@@ -32,7 +32,7 @@ import BaseInput from "./BaseInput";
  * @returns {JSX.Element} The text input component.
  */
 function TextInput({
-  type = "text",
+  type = 'text',
   label,
   value,
   placeholder,
@@ -41,8 +41,8 @@ function TextInput({
   onChange,
   rounded,
 }: TextInputProps): JSX.Element {
-  const [inputValue, setValue] = React.useState(value ?? "");
-  const internalIDs = label.toLowerCase().split(" ").join("_");
+  const [inputValue, setValue] = React.useState(value ?? '');
+  const internalIDs = label.toLowerCase().split(' ').join('_');
 
   // Triggering useEffect hook on mount once to populate initial empty onChange callback.
   useEffect(() => {

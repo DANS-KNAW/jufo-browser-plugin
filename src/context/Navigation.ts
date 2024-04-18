@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext } from 'react';
 
 interface NavigationTabs {
   label: string;
@@ -14,16 +14,16 @@ interface NavigationContextProps {
 const defaultNavigationContext: NavigationContextProps = {
   tabs: [],
   setActiveTabs: () => {},
-  currentTab: "",
+  currentTab: '',
 };
 
 /**
  * NavigationContext is used to manage the state of the navigation tabs
- * 
+ *
  * @param tabs - Array of NavigationTabs
  * @param setActiveTabs - Function to set the active tab
  * @param currentTab - The current active tab
  */
 export const NavigationContext = createContext<NavigationContextProps>(
-  defaultNavigationContext
+  defaultNavigationContext,
 );

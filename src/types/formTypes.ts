@@ -28,16 +28,16 @@ type CommonInputProps = Readonly<{
    * Specifies the rounded corners of the input.
    * Possible values: "bottom", "middle", "top", "all".
    */
-  rounded?: "bottom" | "middle" | "top" | "all";
+  rounded?: 'bottom' | 'middle' | 'top' | 'all';
 }>;
 
 export interface TextInputProps extends CommonInputProps {
-  type?: "text" | "date";
+  type?: 'text' | 'date';
   value?: string;
 }
 
 export interface TextAreaInputProps extends CommonInputProps {
-  type: "textarea";
+  type: 'textarea';
   value?: string;
   rows?: number;
 }
@@ -51,7 +51,7 @@ export type LookupDataset = Readonly<{
 }>;
 
 export interface LookupInputProps extends CommonInputProps {
-  type: "lookup";
+  type: 'lookup';
   value?: string;
   dataset: LookupDataset[];
   multiple?: boolean;

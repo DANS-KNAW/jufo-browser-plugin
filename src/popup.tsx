@@ -1,24 +1,24 @@
-import React, { useEffect, useState } from "react";
-import { createRoot } from "react-dom/client";
-import "./main.css";
-import TabView from "./components/TabView";
-import useFetchTab from "./hooks/useCurrentTabInfo";
-import useGrabAnnotation from "./hooks/useAnnotation";
-import Annotation from "./views/Annotation";
-import Vocabularies from "./views/Vocabularies";
-import { NavigationContext } from "./context/Navigation";
-import Settings from "./views/Settings";
-import useChromeStorage from "./hooks/useChromeStorage";
-import { SettingsContext, SettingsDto } from "./context/Settings";
+import React, { useEffect, useState } from 'react';
+import { createRoot } from 'react-dom/client';
+import './main.css';
+import TabView from './components/TabView';
+import useFetchTab from './hooks/useCurrentTabInfo';
+import useGrabAnnotation from './hooks/useAnnotation';
+import Annotation from './views/Annotation';
+import Vocabularies from './views/Vocabularies';
+import { NavigationContext } from './context/Navigation';
+import Settings from './views/Settings';
+import useChromeStorage from './hooks/useChromeStorage';
+import { SettingsContext, SettingsDto } from './context/Settings';
 
 function App() {
   const tab = useFetchTab();
   const annotation = useGrabAnnotation(tab.tabId);
-  const storage = useChromeStorage("settings");
+  const storage = useChromeStorage('settings');
   const [settings, setSettingsState] = useState<SettingsDto>({
     mirrorHypothesis: true,
     useCustomHypothesisKey: true,
-    customHypothesisKey: "",
+    customHypothesisKey: '',
     vocabularies: {
       workingGroups: true,
       interestGroups: true,
@@ -28,12 +28,12 @@ function App() {
       domain: true,
     },
   });
-  const [activeTab, setActiveTab] = React.useState("Annotation");
+  const [activeTab, setActiveTab] = React.useState('Annotation');
 
   const [tabs, setTabs] = React.useState([
-    { label: "Annotation", active: true },
-    { label: "Vocabularies", active: false },
-    { label: "Settings", active: false },
+    { label: 'Annotation', active: true },
+    { label: 'Vocabularies', active: false },
+    // { label: "Settings", active: false },
   ]);
 
   useEffect(() => {
@@ -45,10 +45,9 @@ function App() {
   const setSettings = (newSettings: React.SetStateAction<SettingsDto>) => {
     setSettingsState((prevSettings) => {
       // Compute the new settings based on the input action
-      const updatedSettings =
-        newSettings instanceof Function
-          ? newSettings(prevSettings)
-          : newSettings;
+      const updatedSettings = newSettings instanceof Function
+        ? newSettings(prevSettings)
+        : newSettings;
 
       // Persist the updated settings to chrome.storage.sync
       chrome.storage.sync.set({ settings: updatedSettings });
@@ -71,8 +70,8 @@ function App() {
     return (
       <main className="flex h-screen w-full flex-col">
         <TabView>
-          <div className="h-full w-full flex justify-center items-center">
-            <p className="text-xl text-center font-bold">
+          <div className="flex size-full items-center justify-center">
+            <p className="text-center text-xl font-bold">
               Collecting Resource Info...
             </p>
           </div>
@@ -88,17 +87,17 @@ function App() {
       >
         <main className="flex h-screen w-full flex-col">
           <TabView>
-            {activeTab === "Annotation" && !annotation && (
-              <div className="bg-white px-4 pb-4 pt-5 text-left w-full mt-8 p-6 border border-red-400 rounded-lg">
+            {activeTab === 'Annotation' && !annotation && (
+              <div className="mt-8 w-full rounded-lg border border-red-400 bg-white p-6 px-4 pb-4 pt-5 text-left">
                 <div className="flex items-start">
-                  <div className="flex flex-shrink-0 items-center justify-center rounded-full bg-red-100 mx-0 h-10 w-10">
+                  <div className="mx-0 flex size-10 shrink-0 items-center justify-center rounded-full bg-red-100">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
                       strokeWidth="1.5"
                       stroke="currentColor"
-                      className="h-6 w-6 text-red-600"
+                      className="size-6 text-red-600"
                       aria-hidden="true"
                     >
                       <path
@@ -114,7 +113,9 @@ function App() {
                     </h3>
                     <div className="mt-2">
                       <p className="text-sm text-gray-500">
-                        <strong>Before</strong> filling out the form, please
+                        <strong>Before</strong>
+                        {' '}
+                        filling out the form, please
                         make a selection on the web resource you wish to
                         annotate. If you have already made a selection and are
                         still getting this message, please refresh the page and
@@ -125,11 +126,11 @@ function App() {
                 </div>
               </div>
             )}
-            {activeTab === "Annotation" && annotation && (
+            {activeTab === 'Annotation' && annotation && (
               <Annotation tabUrl={tab.tabUrl} annotation={annotation} />
             )}
-            {activeTab === "Vocabularies" && <Vocabularies />}
-            {activeTab === "Settings" && <Settings />}
+            {activeTab === 'Vocabularies' && <Vocabularies />}
+            {/* {activeTab === "Settings" && <Settings />} */}
           </TabView>
         </main>
       </NavigationContext.Provider>
@@ -137,10 +138,10 @@ function App() {
   );
 }
 
-const root = createRoot(document.getElementById("root")!);
+const root = createRoot(document.getElementById('root')!);
 
 root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
 );

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 function DomainIcon() {
   return (
@@ -8,7 +8,7 @@ function DomainIcon() {
       viewBox="0 0 24 24"
       strokeWidth="1.5"
       stroke="currentColor"
-      className="w-6 h-6"
+      className="size-6"
     >
       <path
         strokeLinecap="round"

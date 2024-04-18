@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { NavigationContext } from "../context/Navigation";
+import React, { useContext } from 'react';
+import { NavigationContext } from '../context/Navigation';
 
 function TabView({ children }: Readonly<{ children: React.ReactNode }>) {
   const navigationContext = useContext(NavigationContext);
@@ -17,15 +17,15 @@ function TabView({ children }: Readonly<{ children: React.ReactNode }>) {
               type="button"
               key={tab.label}
               className={`${
-                tab.active ? "text-rda-500" : ""
+                tab.active ? 'text-rda-500' : ''
               } group relative min-w-0 flex-1 overflow-hidden p-4 text-center text-sm font-bold text-gray-900 hover:text-rda-500 focus:z-10`}
-              aria-current={tab.active ? "page" : undefined}
+              aria-current={tab.active ? 'page' : undefined}
             >
               <span>{tab.label}</span>
               <span
                 aria-hidden="true"
                 className={`${
-                  tab.active ? "bg-rda-500" : "bg-transparent"
+                  tab.active ? 'bg-rda-500' : 'bg-transparent'
                 } absolute inset-x-0 bottom-0 h-0.5`}
               />
             </button>

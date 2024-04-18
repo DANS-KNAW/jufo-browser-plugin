@@ -11,20 +11,20 @@ function AreaInput({
   rounded,
   onChange,
 }: Readonly<TextAreaInputProps>) {
-  const [inputValue, setValue] = React.useState(value ?? "");
+  const [inputValue, setValue] = React.useState(value ?? '');
   const internalIDs = label.toLowerCase().split(' ').join('_');
 
-    // Triggering useEffect hook on mount once to populate initial empty onChange callback.
-    useEffect(() => {
-      if (value !== undefined) {
-        onChange(internalIDs, value);
-      }
-    }, []);
+  // Triggering useEffect hook on mount once to populate initial empty onChange callback.
+  useEffect(() => {
+    if (value !== undefined) {
+      onChange(internalIDs, value);
+    }
+  }, []);
 
-    const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-      onChange(internalIDs, e.target.value);
-      setValue(e.target.value);
-    };
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    onChange(internalIDs, e.target.value);
+    setValue(e.target.value);
+  };
 
   let section = '';
   switch (rounded) {

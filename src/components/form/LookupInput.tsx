@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import { LookupDataset, LookupInputProps } from "../../types/formTypes";
-import BaseInput from "./BaseInput";
+import React, { useEffect } from 'react';
+import { LookupDataset, LookupInputProps } from '../../types/formTypes';
+import BaseInput from './BaseInput';
 
 /**
  * A text input component.
@@ -32,7 +32,7 @@ import BaseInput from "./BaseInput";
  * @returns {JSX.Element} The text input component.
  */
 function LookupInput({
-  type = "lookup",
+  type = 'lookup',
   label,
   value,
   placeholder,
@@ -43,17 +43,17 @@ function LookupInput({
   dataset,
   multiple,
 }: LookupInputProps): JSX.Element {
-  const [inputValue, setValue] = React.useState(value ?? "");
+  const [inputValue, setValue] = React.useState(value ?? '');
 
   // State to check if input has been touched
   const [touched, setTouched] = React.useState(false);
 
   const [selectedItem, setSelectedItem] = React.useState<
-    LookupDataset | undefined
+  LookupDataset | undefined
   >({
-    id: "",
-    label: "",
-    value: "",
+    id: '',
+    label: '',
+    value: '',
   });
   const [selectedItems, setSelectedItems] = React.useState<LookupDataset[]>([]);
 
@@ -64,25 +64,22 @@ function LookupInput({
   }, [selectedItems]);
 
   const [isListVisible, setListVisible] = React.useState(false);
-  const [filteredItems, setFilteredItems] =
-    React.useState<LookupDataset[]>(dataset);
+  const [filteredItems, setFilteredItems] = React.useState<LookupDataset[]>(dataset);
 
   const handleQueryChange = (query: string) => {
     // Check if query is empty
-    if (query === "") {
+    if (query === '') {
       // If query is empty, set filteredItems to all items
       setFilteredItems(dataset);
     } else {
       // If query is not empty, filter items by label
       setFilteredItems(
-        dataset.filter((item) =>
-          item.label.toLowerCase().includes(query.toLowerCase())
-        )
+        dataset.filter((item) => item.label.toLowerCase().includes(query.toLowerCase())),
       );
     }
   };
 
-  const internalIDs = label.toLowerCase().split(" ").join("_");
+  const internalIDs = label.toLowerCase().split(' ').join('_');
 
   // Triggering useEffect hook on mount once to populate initial empty onChange callback.
   useEffect(() => {
@@ -143,9 +140,11 @@ function LookupInput({
                 onChange(internalIDs, selectedItems);
               }}
               type="button"
-              className="inline-flex items-center rounded-md bg-rda-50 px-2 py-1 text-xs font-medium text-rda-500 ring-1 ring-inset ring-rda-500/10 hover:bg-rda-100 hover:text-rda-600 disabled:hover:text-rda-500 disabled:cursor-not-allowed disabled:bg-rda-50"
+              className="inline-flex items-center rounded-md bg-rda-50 px-2 py-1 text-xs font-medium text-rda-500 ring-1 ring-inset ring-rda-500/10 hover:bg-rda-100 hover:text-rda-600 disabled:cursor-not-allowed disabled:bg-rda-50 disabled:hover:text-rda-500"
             >
-              {item.label} X
+              {item.label}
+              {' '}
+              X
             </button>
           ))}
         </ul>
@@ -155,7 +154,7 @@ function LookupInput({
           type="text"
           name={internalIDs}
           id={internalIDs}
-          className="block w-full border-0 p-0 text-[0.875rem] leading-6 placeholder:text-gray-400 focus:ring-0 disabled:cursor-not-allowed disabled:bg-gray-200 pr-10"
+          className="block w-full border-0 p-0 pr-10 text-[0.875rem] leading-6 placeholder:text-gray-400 focus:ring-0 disabled:cursor-not-allowed disabled:bg-gray-200"
           required={required}
           disabled={disabled}
           placeholder={placeholder}
@@ -176,7 +175,7 @@ function LookupInput({
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 16 16"
             fill="currentColor"
-            className={`size-5 ${isValid ? "text-red-400" : "text-rda-500"}`}
+            className={`size-5 ${isValid ? 'text-red-400' : 'text-rda-500'}`}
             aria-hidden="true"
           >
             <path
@@ -188,21 +187,21 @@ function LookupInput({
         </button>
 
         {isListVisible && filteredItems.length > 0 && (
-          <ul className="shadow-lg divide-y divide-gray-300 focus:outline-none absolute z-10 mt-1 max-h-32 w-full overflow-auto rounded-md bg-white py-1 text-sm">
+          <ul className="absolute z-10 mt-1 max-h-32 w-full divide-y divide-gray-300 overflow-auto rounded-md bg-white py-1 text-sm shadow-lg focus:outline-none">
             {filteredItems.map((item, i) => (
               <li
                 key={i}
-                className="relative cursor-default select-none py-2 px-3 hover:bg-rda-500 hover:text-white hover:cursor-pointer group"
+                className="group relative cursor-default select-none px-3 py-2 hover:cursor-pointer hover:bg-rda-500 hover:text-white"
                 onClick={() => {
                   if (
                     !selectedItems.some(
-                      (currentItems) => currentItems.id === item.id
-                    ) &&
-                    multiple
+                      (currentItems) => currentItems.id === item.id,
+                    )
+                    && multiple
                   ) {
                     setSelectedItems((prevItems) => [...prevItems, item]);
-                    handleQueryChange("");
-                    setValue("");
+                    handleQueryChange('');
+                    setValue('');
                   }
 
                   setListVisible(false);
@@ -215,11 +214,11 @@ function LookupInput({
                   }
                 }}
               >
-                <span className="text-gray-900 group-hover:text-white font-medium">
+                <span className="font-medium text-gray-900 group-hover:text-white">
                   {item.label}
                 </span>
                 {item.description && (
-                  <p className="text-gray-500 text-xs group-hover:text-white">
+                  <p className="text-xs text-gray-500 group-hover:text-white">
                     {item.description}
                   </p>
                 )}

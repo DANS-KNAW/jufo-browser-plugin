@@ -1,56 +1,56 @@
-import React, { useContext } from "react";
-import WorkingGroupsIcon from "../svg/WorkingGroupsIcon";
-import InterestGroupsIcon from "../svg/InterestGroupsIcon";
-import PathwaysIcon from "../svg/PathwaysIcon";
-import GORCElementsIcon from "../svg/GORCElementsIcon";
-import GORCAttributesIcon from "../svg/GORCAttributesIcon";
-import DomainIcon from "../svg/DomainIcon";
-import { SettingsContext } from "../context/Settings";
+import React, { useContext } from 'react';
+import WorkingGroupsIcon from '../svg/WorkingGroupsIcon';
+import InterestGroupsIcon from '../svg/InterestGroupsIcon';
+import PathwaysIcon from '../svg/PathwaysIcon';
+import GORCElementsIcon from '../svg/GORCElementsIcon';
+import GORCAttributesIcon from '../svg/GORCAttributesIcon';
+import DomainIcon from '../svg/DomainIcon';
+import { SettingsContext } from '../context/Settings';
 
 function Vocabularies() {
   const { settings, setSettings } = useContext(SettingsContext);
 
   const vocabOptions = [
     {
-      id: "workingGroups",
-      label: "Working Groups",
+      id: 'workingGroups',
+      label: 'Working Groups',
       icon: WorkingGroupsIcon,
       active: settings.vocabularies.workingGroups,
     },
     {
-      id: "interestGroups",
-      label: "Interest Groups",
+      id: 'interestGroups',
+      label: 'Interest Groups',
       icon: InterestGroupsIcon,
       active: settings.vocabularies.interestGroups,
     },
     {
-      id: "pathways",
-      label: "Pathways",
+      id: 'pathways',
+      label: 'Pathways',
       icon: PathwaysIcon,
       active: settings.vocabularies.pathways,
     },
     {
-      id: "gorcElements",
-      label: "GORC Elements",
+      id: 'gorcElements',
+      label: 'GORC Elements',
       icon: GORCElementsIcon,
       active: settings.vocabularies.gorcElements,
     },
     {
-      id: "gorcAttributes",
-      label: "GORC Attributes",
+      id: 'gorcAttributes',
+      label: 'GORC Attributes',
       icon: GORCAttributesIcon,
       active: settings.vocabularies.gorcAttributes,
     },
     {
-      id: "domain",
-      label: "Domain",
+      id: 'domain',
+      label: 'Domain',
       icon: DomainIcon,
       active: settings.vocabularies.domain,
     },
   ];
 
   const Items = vocabOptions.map((item, index) => {
-    const id = item.label.replace(/\s/g, "-").toLowerCase();
+    const id = item.label.replace(/\s/g, '-').toLowerCase();
 
     const setVocab = (active: boolean) => {
       setSettings({
@@ -64,7 +64,7 @@ function Vocabularies() {
         <div className="min-w-0 flex-1 text-sm leading-6">
           <label
             htmlFor={id}
-            className="select-none font-medium text-gray-900 flex py-4"
+            className="flex select-none py-4 font-medium text-gray-900"
           >
             <item.icon />
             <span className="pl-2">{item.label}</span>
@@ -75,7 +75,7 @@ function Vocabularies() {
             id={id}
             name={id}
             type="checkbox"
-            className="h-4 w-4 rounded border-gray-300 text-rda-500 focus:ring-rda-500"
+            className="size-4 rounded border-gray-300 text-rda-500 focus:ring-rda-500"
             checked={item.active}
             onChange={() => setVocab(!item.active)}
           />
@@ -87,7 +87,7 @@ function Vocabularies() {
   return (
     <>
       <h2 className="text-xl font-bold">Vocabularies</h2>
-      <div className="mt-4 divide-y divide-gray-200 border-b border-t border-gray-200">
+      <div className="mt-4 divide-y divide-gray-200 border-y border-gray-200">
         {Items}
       </div>
     </>

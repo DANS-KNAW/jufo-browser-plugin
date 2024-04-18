@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export interface SettingsDto {
   mirrorHypothesis: boolean;
@@ -21,7 +21,7 @@ const defaultSettingsContext: SettingsContext = {
   settings: {
     mirrorHypothesis: true,
     useCustomHypothesisKey: true,
-    customHypothesisKey: "",
+    customHypothesisKey: '',
     vocabularies: {
       workingGroups: true,
       interestGroups: true,
@@ -35,5 +35,5 @@ const defaultSettingsContext: SettingsContext = {
 };
 
 export const SettingsContext = React.createContext<SettingsContext>(
-  defaultSettingsContext
+  defaultSettingsContext,
 );
