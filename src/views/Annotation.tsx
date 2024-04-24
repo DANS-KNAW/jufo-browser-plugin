@@ -327,10 +327,11 @@ function Annotation({
               onChange={handleChange}
               rounded="middle"
               dataset={interestgroups.map((interestGroup) => ({
-                id: interestGroup.ig_UUID,
-                label: interestGroup.Title,
-                value: interestGroup.ig_UUID,
-                description: interestGroup.Description,
+                id: interestGroup.uuid_interestgroup,
+                label: interestGroup.title,
+                value: interestGroup.uuid_interestgroup,
+                description: interestGroup.description,
+                url: interestGroup.url,
               }))}
               multiple
               disabled={submitting}
