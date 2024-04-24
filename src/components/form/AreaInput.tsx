@@ -27,13 +27,12 @@ import BaseInput from './BaseInput';
  * @param {string} props.placeholder - The placeholder text for the textarea element.
  * @param {boolean} props.required - Indicates whether the textarea is required.
  * @param {boolean} props.disabled - Indicates whether the textarea is disabled.
- * @param {Function} props.onChange - The callback function triggered when the textarea value changes.
+ * @param {Function} props.onChange - The callback function triggered on textarea change.
  * @param {boolean} props.rounded - Indicates whether the textarea has rounded corners.
  * @param {number} props.rows - The number of rows for the textarea element.
  * @returns {JSX.Element} The text textarea component.
  */
 function AreaInput({
-  type = 'textarea', // Used for type checking, later will be used for validation.
   label,
   value,
   placeholder,

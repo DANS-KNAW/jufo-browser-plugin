@@ -13,11 +13,11 @@ export interface SettingsDto {
     domain: boolean;
   };
 }
-export interface SettingsContext {
+export interface SettingsContextDto {
   settings: SettingsDto;
   setSettings: React.Dispatch<React.SetStateAction<SettingsDto>>;
 }
-const defaultSettingsContext: SettingsContext = {
+const defaultSettingsContext: SettingsContextDto = {
   settings: {
     mirrorHypothesis: true,
     useCustomHypothesisKey: true,
@@ -34,6 +34,6 @@ const defaultSettingsContext: SettingsContext = {
   setSettings: () => {},
 };
 
-export const SettingsContext = React.createContext<SettingsContext>(
+export const SettingsContext = React.createContext<SettingsContextDto>(
   defaultSettingsContext,
 );

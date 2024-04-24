@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { NavigationContext } from '../context/Navigation';
+import NavigationContext from '../context/Navigation';
 
 function TabView({ children }: Readonly<{ children: React.ReactNode }>) {
   const navigationContext = useContext(NavigationContext);

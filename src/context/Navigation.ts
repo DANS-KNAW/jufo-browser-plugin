@@ -24,6 +24,8 @@ const defaultNavigationContext: NavigationContextProps = {
  * @param setActiveTabs - Function to set the active tab
  * @param currentTab - The current active tab
  */
-export const NavigationContext = createContext<NavigationContextProps>(
+const NavigationContext = createContext<NavigationContextProps>(
   defaultNavigationContext,
 );
+
+export default NavigationContext;

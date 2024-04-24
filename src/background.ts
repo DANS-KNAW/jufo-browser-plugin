@@ -15,9 +15,8 @@ chrome.runtime.onStartup.addListener(async () => {
         domain: true,
       },
     };
-    chrome.storage.sync.set({ settings }, () => console.log('Settings saved!'));
+    chrome.storage.sync.set({ settings });
   }
 
   storage = await chrome.storage.sync.get('settings');
-  console.log(storage);
 });

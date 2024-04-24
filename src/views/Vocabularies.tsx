@@ -49,7 +49,7 @@ function Vocabularies() {
     },
   ];
 
-  const Items = vocabOptions.map((item, index) => {
+  const Items = vocabOptions.map((item) => {
     const id = item.label.replace(/\s/g, '-').toLowerCase();
 
     const setVocab = (active: boolean) => {
@@ -60,7 +60,7 @@ function Vocabularies() {
     };
 
     return (
-      <div key={index} className="relative flex items-center px-4">
+      <div key={item.id} className="relative flex items-center px-4">
         <div className="min-w-0 flex-1 text-sm leading-6">
           <label
             htmlFor={id}

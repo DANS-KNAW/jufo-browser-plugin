@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import AreaInput from '../components/AreaInput';
-import LookupInput from '../components/form/LookupInput';
+import ComboInput from '../components/form/LookupInput';
 import TextInput from '../components/form/TextInput';
 import {
   language,
@@ -64,6 +64,8 @@ function Annotation({
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSubmitting(true);
+    console.log(formData);
+
     const response = await fetch('http://49.12.1.231:3001', {
       method: 'POST',
       headers: {
@@ -139,7 +141,7 @@ function Annotation({
 
         <h3 className="text-base font-bold">Administrative</h3>
         <div className="-space-y-px">
-          <LookupInput
+          <ComboInput
             type="lookup"
             label="Language"
             onChange={handleChange}
@@ -161,7 +163,7 @@ function Annotation({
             disabled
             rounded="middle"
           />
-          <LookupInput
+          <ComboInput
             type="lookup"
             label="Resource Type"
             onChange={handleChange}
@@ -271,7 +273,7 @@ function Annotation({
         <h3 className="text-base font-bold">Coverage</h3>
         <div className="-space-y-px">
           {vocabularies.pathways && (
-            <LookupInput
+            <ComboInput
               type="lookup"
               label="Pathways"
               onChange={handleChange}
@@ -287,7 +289,7 @@ function Annotation({
             />
           )}
           {vocabularies.gorcAttributes && (
-            <LookupInput
+            <ComboInput
               type="lookup"
               label="GORC Attributes"
               onChange={handleChange}
@@ -303,7 +305,7 @@ function Annotation({
             />
           )}
           {vocabularies.gorcElements && (
-            <LookupInput
+            <ComboInput
               type="lookup"
               label="GORC Elements"
               onChange={handleChange}
@@ -319,7 +321,7 @@ function Annotation({
             />
           )}
           {vocabularies.interestGroups && (
-            <LookupInput
+            <ComboInput
               type="lookup"
               label="Interest Groups"
               onChange={handleChange}
@@ -335,22 +337,22 @@ function Annotation({
             />
           )}
           {vocabularies.workingGroups && (
-            <LookupInput
+            <ComboInput
               type="lookup"
               label="Working Groups"
               onChange={handleChange}
               rounded="middle"
-              dataset={workingGroups.map((workingGroups) => ({
-                id: workingGroups.g_UUID,
-                label: workingGroups.Title,
-                value: workingGroups.g_UUID,
+              dataset={workingGroups.map((workingGroup) => ({
+                id: workingGroup.g_UUID,
+                label: workingGroup.Title,
+                value: workingGroup.g_UUID,
               }))}
               multiple
               disabled={submitting}
             />
           )}
           {vocabularies.domain && (
-            <LookupInput
+            <ComboInput
               type="lookup"
               label="Domains"
               onChange={handleChange}

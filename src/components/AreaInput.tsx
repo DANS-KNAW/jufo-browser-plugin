@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { TextAreaInputProps } from '../types/formTypes';
 
 function AreaInput({
-  type,
   label,
   placeholder,
   value,

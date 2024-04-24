@@ -2,11 +2,10 @@ import React, { useContext } from 'react';
 import debounce from 'debounce';
 import TextInput from '../components/form/TextInput';
 import { SettingsContext } from '../context/Settings';
-import LookupInput from '../components/form/LookupInput';
 
 function Settings() {
   const { settings, setSettings } = useContext(SettingsContext);
-  const [target, setTarget] = React.useState<string>('RDA_GRAPH');
+  // const [target, setTarget] = React.useState<string>('RDA_GRAPH');
   const changeAPIkey = (value: string) => {
     setSettings({ ...settings, customHypothesisKey: value });
   };
@@ -79,7 +78,7 @@ function Settings() {
             )}
           </>
         )}
-        <LookupInput
+        {/* <LookupInput
           type="lookup"
           label="Target for Annoations"
           dataset={[
@@ -87,7 +86,7 @@ function Settings() {
           ]}
           onChange={(name, value) => setTarget(value)}
           value="RDA Graph"
-        />
+        /> */}
       </form>
     </>
   );

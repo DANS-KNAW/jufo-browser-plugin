@@ -19,7 +19,7 @@ function useChromeStorage<T>(
   useEffect(() => {
     async function fetchData() {
       try {
-        const data = await new Promise<T>((resolve, reject) => {
+        const dataFetch = await new Promise<T>((resolve, reject) => {
           chrome.storage.sync.get([key], (result) => {
             if (chrome.runtime.lastError) {
               reject(new Error(chrome.runtime.lastError.message));
@@ -28,7 +28,7 @@ function useChromeStorage<T>(
             }
           });
         });
-        setData({ loading: false, error: null, value: data });
+        setData({ loading: false, error: null, value: dataFetch });
       } catch (error: any) {
         setData({ loading: false, error, value: defaultValue });
       }

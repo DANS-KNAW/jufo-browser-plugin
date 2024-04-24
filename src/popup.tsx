@@ -6,8 +6,7 @@ import useFetchTab from './hooks/useCurrentTabInfo';
 import useGrabAnnotation from './hooks/useAnnotation';
 import Annotation from './views/Annotation';
 import Vocabularies from './views/Vocabularies';
-import { NavigationContext } from './context/Navigation';
-import Settings from './views/Settings';
+import NavigationContext from './context/Navigation';
 import useChromeStorage from './hooks/useChromeStorage';
 import { SettingsContext, SettingsDto } from './context/Settings';
 
@@ -58,9 +57,9 @@ function App() {
   };
 
   const setActiveTabs = (label: string) => {
-    const newTabs = tabs.map((tab) => {
-      tab.active = tab.label === label;
-      return tab;
+    const newTabs = tabs.map((tabItem) => {
+      tabItem.active = tabItem.label === label;
+      return tabItem;
     });
     setTabs(newTabs);
     setActiveTab(label);
