@@ -293,11 +293,11 @@ function Annotation({
               label="GORC Attributes"
               onChange={handleChange}
               rounded="middle"
-              dataset={gorcAttributes.map((attributes, index) => ({
-                id: `${index}`,
+              dataset={gorcAttributes.map((attributes) => ({
+                id: attributes.uuid_attribute,
                 label: attributes.attribute,
-                value: attributes.attribute,
-                description: attributes.tags,
+                value: attributes.uuid_attribute,
+                description: attributes.description,
               }))}
               multiple
               disabled={submitting}
@@ -309,11 +309,11 @@ function Annotation({
               label="GORC Elements"
               onChange={handleChange}
               rounded="middle"
-              dataset={gorcElements.map((elements, index) => ({
-                id: `${index}`,
+              dataset={gorcElements.map((elements) => ({
+                id: elements.uuid_element,
                 label: elements.element,
-                value: elements.element,
-                description: elements.tags,
+                value: elements.uuid_element,
+                description: elements.description,
               }))}
               multiple
               disabled={submitting}

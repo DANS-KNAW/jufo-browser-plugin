@@ -225,342 +225,517 @@ export const language = [
 
 export const gorcElements = [
   {
+    uuid_element: 'rda_tiger:ZW6TB2VETKECBDP4UTZM',
     element: 'Governance*',
-    tags: 'human individuals and groups comprised of stakeholders that define the commons purpose and the development of the strategies, objectives, values, and policies that frame how that purpose will be pursued.',
+    description:
+      'human individuals and groups comprised of stakeholders that define the commons purpose and the development of the strategies, objectives, values, and policies that frame how that purpose will be pursued.',
   },
   {
+    uuid_element: 'rda_tiger:RFB2YHM3VZ7HT9BXO9IV',
     element: 'Rules of Participation & Access*',
-    tags: 'a set of policies defining a minimal set of rights, obligations, and accountiability governing the activities of those participating in the commons*.',
+    description:
+      'a set of policies defining a minimal set of rights, obligations, and accountiability governing the activities of those participating in the commons*.',
   },
   {
+    uuid_element: 'rda_tiger:U6WYGX7D2GJR7NPHR3YW',
     element: 'Sustainability*',
-    tags: 'models and agreements made on how to fund or resouce activities in a way that can be sustained over the long term.',
+    description:
+      'models and agreements made on how to fund or resouce activities in a way that can be sustained over the long term.',
   },
   {
+    uuid_element: 'rda_tiger:UGVMXPKHTORMQW3ITOYJ',
     element: 'Engagement*',
-    tags: 'methods, mechanisms, and means used to interact with the broad research commons community* to involve them in activities. specifically human engagement, as technical engagement is captured in services* & tools*',
+    description:
+      'methods, mechanisms, and means used to interact with the broad research commons community* to involve them in activities. specifically human engagement, as technical engagement is captured in services* & tools*',
   },
   {
+    uuid_element: 'rda_tiger:4YH8UKWPKPOMTXRRWYGX',
     element: 'Human Capacity*',
-    tags: 'the ability of the commons* to create a human-friendly environment for all stakeholders* and community* members* in all aspects, specifically for users*, providers*, and internal staff, so that the commons* can set and achieve objectives, perform functions, solve problems, and continue to develop the means and conditions required to enable this process.',
+    description:
+      'the ability of the commons* to create a human-friendly environment for all stakeholders* and community* members* in all aspects, specifically for users*, providers*, and internal staff, so that the commons* can set and achieve objectives, perform functions, solve problems, and continue to develop the means and conditions required to enable this process.',
   },
   {
+    uuid_element: 'rda_tiger:UAXSZAUMR4RUZTHCCAM6',
     element: 'ICT Infrastructure*',
-    tags: 'information and communications technology infrastructure, the physical components that a computer system requires to function and are necessary to conduct research.',
+    description:
+      'information and communications technology infrastructure, the physical components that a computer system requires to function and are necessary to conduct research.',
   },
   {
+    uuid_element: 'rda_tiger:F7XGT4JRE3XDHC42BT7U',
     element: 'Interoperability*',
-    tags: 'the ability of research objects* or tools* from different resources to integrate or work together with minimal effort. e.g. a research data file can be used by two different commons* hpc infrastructure.',
+    description:
+      'the ability of research objects* or tools* from different resources to integrate or work together with minimal effort. e.g. a research data file can be used by two different commons* hpc infrastructure.',
   },
   {
+    uuid_element: 'rda_tiger:G7JDIIXYBZCLYDGTATJX',
     element: 'Standards*',
-    tags: 'a repeatable, harmonized, agreed and documented way of doing something.',
+    description:
+      'a repeatable, harmonized, agreed and documented way of doing something.',
   },
   {
+    uuid_element: 'rda_tiger:C74HCHHHDLR6SJQGFTTR',
     element: 'Services* & Tools*',
-    tags: 'service: any commons* element that can be invoked by users* to perform some action on their behalf. tool: any commons* element that enables users* to perform one or more operations, typically on data with data as the output.',
+    description:
+      'service: any commons* element that can be invoked by users* to perform some action on their behalf. tool: any commons* element that enables users* to perform one or more operations, typically on data with data as the output.',
   },
   {
+    uuid_element: 'rda_tiger:UEHS3BVHPDSPW4WGIQ69',
     element: 'Research Object*',
-    tags: 'any input or output of any and all stages of the research process.',
+    description:
+      'any input or output of any and all stages of the research process.',
   },
 ];
 
 export const gorcAttributes = [
   {
+    uuid_attribute: 'rda_tiger:TA2OJCGDBXDQCM5I5GMBQ',
     attribute: 'Intent',
-    tags: 'commons intent, definition, and strategic planning',
+    description: 'commons intent, definition, and strategic planning',
   },
   {
+    uuid_attribute: 'rda_tiger:66J6D7LNFQ7ACSR8V5EPS',
     attribute: 'Organization',
-    tags: 'an appropriate organizational structure, design, and capability maturity for the aims and context of the commons*',
+    description:
+      'an appropriate organizational structure, design, and capability maturity for the aims and context of the commons*',
   },
-  { attribute: 'Risk Management', tags: 'risk management frameworks' },
   {
+    uuid_attribute: 'rda_tiger:7WJDAR0CLG7V29P7EXNPH',
+    attribute: 'Risk Management',
+    description: 'risk management frameworks',
+  },
+  {
+    uuid_attribute: 'rda_tiger:SLXCIMHU03LCVH1II75KL',
     attribute: 'Commons* Policy',
-    tags: 'internal commons* policy development, implementation, and review',
+    description:
+      'internal commons* policy development, implementation, and review',
   },
   {
+    uuid_attribute: 'rda_tiger:EJ5D6R9UG6RBFB1AZWTZ5',
     attribute: 'Community* Relations',
-    tags: 'development and implementation of community* relations',
+    description: 'development and implementation of community* relations',
   },
-  { attribute: 'Policy', tags: 'policy advocacy, and recommendations' },
   {
+    uuid_attribute: 'rda_tiger:WK1ML9B18SIRMN6FS1PVO',
+    attribute: 'Policy',
+    description: 'policy advocacy, and recommendations',
+  },
+  {
+    uuid_attribute: 'rda_tiger:7UUFZDJ7RDZU50LRVMQ2S',
     attribute: 'Organizational Monitoring',
-    tags: 'a monitoring organizational design or organizational performance system to gather qualitative and quantitative metrics',
+    description:
+      'a monitoring organizational design or organizational performance system to gather qualitative and quantitative metrics',
   },
   {
+    uuid_attribute: 'rda_tiger:R9K5DNK67PCXM0ONC3XW6',
     attribute: 'Research Governance',
-    tags: 'research object and service governance rules, principles, and enforcement of quality.',
+    description:
+      'research object and service governance rules, principles, and enforcement of quality.',
   },
   {
+    uuid_attribute: 'rda_tiger:6LL41UOWGJW7JXQWR1C7I',
     attribute: 'Community* Definition',
-    tags: 'any definition of the commons community*',
+    description: 'any definition of the commons community*',
   },
   {
+    uuid_attribute: 'rda_tiger:65SMQS792QSL2299OPMSK',
     attribute: 'Community* Rights',
-    tags: 'existence of a set of policies defining a minimal set of rights and obligations for the commons* communty',
+    description:
+      'existence of a set of policies defining a minimal set of rights and obligations for the commons* communty',
   },
   {
+    uuid_attribute: 'rda_tiger:0066NV53M269BASKEGL4K',
     attribute: 'Community* Accountability',
-    tags: 'existence of a set of policies defining minimal accountability for the commons* communty',
+    description:
+      'existence of a set of policies defining minimal accountability for the commons* communty',
   },
   {
+    uuid_attribute: 'rda_tiger:JUTIZVA2BVR22X7JJT50P',
     attribute: 'Community* EDII',
-    tags: 'a commitement to equity, diversity, inclusion, and where appropriate, indigenization (edii), for the commons* communty',
+    description:
+      'a commitement to equity, diversity, inclusion, and where appropriate, indigenization (edii), for the commons* communty',
   },
   {
+    uuid_attribute: 'rda_tiger:TE8UZCKDL0SUT7NVS3ZOK',
     attribute: 'Resourcing',
-    tags: 'minimal viable plan for resourcing on the medium and long term',
+    description:
+      'minimal viable plan for resourcing on the medium and long term',
   },
   {
+    uuid_attribute: 'rda_tiger:AM3J8P39TCPSVB1SEA1QQ',
     attribute: 'Knowledge Retention',
-    tags: 'minimal viable plan for retaining knowledge accumulated by the commons* on the medium and long term',
+    description:
+      'minimal viable plan for retaining knowledge accumulated by the commons* on the medium and long term',
   },
   {
+    uuid_attribute: 'rda_tiger:DBGJD7T6JJZU93RBS53TO',
     attribute: 'Research Objects',
-    tags: 'minimal viable plan for medium and long term management of research objects*',
+    description:
+      'minimal viable plan for medium and long term management of research objects*',
   },
   {
+    uuid_attribute: 'rda_tiger:LKLHE5ID6A9BEH9VWI2D0',
     attribute: 'Trust',
-    tags: 'minimal viable plan to build community* trust and maintain it in the long term',
+    description:
+      'minimal viable plan to build community* trust and maintain it in the long term',
   },
   {
+    uuid_attribute: 'rda_tiger:XJU63519MPD41DI5QVRDL',
     attribute: 'Influencing Governance',
-    tags: 'mechanisms for community* engagement and input as part of setting expectations for governance decision making processes',
+    description:
+      'mechanisms for community* engagement and input as part of setting expectations for governance decision making processes',
   },
   {
+    uuid_attribute: 'rda_tiger:BWABHEEVR76O1RHKPM7E6',
     attribute: 'Communications',
-    tags: 'structured and coordinated communication plan and mechanism, medium, or channels',
+    description:
+      'structured and coordinated communication plan and mechanism, medium, or channels',
   },
   {
+    uuid_attribute: 'rda_tiger:EQ5D89PWVNIAR00RKMIPS',
     attribute: 'Events',
-    tags: 'events hosted or provided by the commons* for individuals in the commons community*.',
+    description:
+      'events hosted or provided by the commons* for individuals in the commons community*.',
   },
   {
+    uuid_attribute: 'rda_tiger:H9S95QZ2LSRUTPXT6FD59',
     attribute: 'Training',
-    tags: 'training hosted or provided by the commons* for individuals in the commons community*.',
+    description:
+      'training hosted or provided by the commons* for individuals in the commons community*.',
   },
   {
+    uuid_attribute: 'rda_tiger:3PIV0AJ94EIPZF12LNM54',
     attribute: 'Promotion',
-    tags: 'active promotion to intended audiences and incentivisation to participate in commons*',
+    description:
+      'active promotion to intended audiences and incentivisation to participate in commons*',
   },
   {
+    uuid_attribute: 'rda_tiger:88Z0P79ZA3R7VS3CXULX6',
     attribute: 'Other Research Commons*',
-    tags: 'engagement* with other research commons*',
+    description: 'engagement* with other research commons*',
   },
-  { attribute: 'Staff', tags: 'internal capacity (i.e. staff)' },
   {
+    uuid_attribute: 'rda_tiger:U4438PG2RGSBEA1PPFLI2',
+    attribute: 'Staff',
+    description: 'internal capacity (i.e. staff)',
+  },
+  {
+    uuid_attribute: 'rda_tiger:X4CNGV7S9WG1KG6C00PA9',
     attribute: 'User-Friendliness',
-    tags: 'skill requirement for users*, ease of use for users*',
+    description: 'skill requirement for users*, ease of use for users*',
   },
   {
+    uuid_attribute: 'rda_tiger:G7TTZ2ICLWOESJA06IT7K',
     attribute: 'RoP Providers',
-    tags: 'openness and freedom for providers* as described in the rules of particiation & access',
+    description:
+      'openness and freedom for providers* as described in the rules of particiation & access',
   },
   {
+    uuid_attribute: 'rda_tiger:1HO0FL2MSD59AG1CUMCRU',
     attribute: 'Record Maintainer',
-    tags: 'record maintainer [contact person or organization for the record in a registry that describes the repository*, the participation of the owner or maintainer of the repo* helps verify the information in the registry]',
+    description:
+      'record maintainer [contact person or organization for the record in a registry that describes the repository*, the participation of the owner or maintainer of the repo* helps verify the information in the registry]',
   },
   {
+    uuid_attribute: 'rda_tiger:6UPNOS5G4UT275QGCLZ7I',
     attribute: 'Services Skills',
-    tags: 'skills for planning, managing and assessing service delivery',
+    description: 'skills for planning, managing and assessing service delivery',
   },
   {
+    uuid_attribute: 'rda_tiger:WS52T95KHW80BIZK8JZFN',
     attribute: 'Services Capacity',
-    tags: 'capacity to manage operations and infrastructure management services*',
+    description:
+      'capacity to manage operations and infrastructure management services*',
   },
   {
+    uuid_attribute: 'rda_tiger:UVP2FT73927S6KH38R9FB',
     attribute: 'Documentation',
-    tags: 'document and make public the whole process for every process where feasible, maintain a high level of transparency and documentation with stakeholders* and the community*',
+    description:
+      'document and make public the whole process for every process where feasible, maintain a high level of transparency and documentation with stakeholders* and the community*',
   },
   {
+    uuid_attribute: 'rda_tiger:EN0EIK1L0E1IKG90XV6WN',
     attribute: 'Scalable',
-    tags: 'infrastructure is designed to scale with increasingly complex projects',
+    description:
+      'infrastructure is designed to scale with increasingly complex projects',
   },
   {
+    uuid_attribute: 'rda_tiger:077AHTDRDO58W9VMC46JZ',
     attribute: 'Regular Updates',
-    tags: 'a review and update of ict infrastructure* happens on a regular basis, with specific considerations for what enables the next layer of the stack and environmental sustainability',
+    description:
+      'a review and update of ict infrastructure* happens on a regular basis, with specific considerations for what enables the next layer of the stack and environmental sustainability',
   },
   {
+    uuid_attribute: 'rda_tiger:9MZ3902VBNX8563MFUDKU',
     attribute: 'Network Infrastructure',
-    tags: 'knowledge and management of network infrastructure',
+    description: 'knowledge and management of network infrastructure',
   },
   {
+    uuid_attribute: 'rda_tiger:2F1R5ARO3329OGJ4TPB5G',
     attribute: 'Compute Infrastructure',
-    tags: 'knowledge and management of compute infrastructure',
+    description: 'knowledge and management of compute infrastructure',
   },
   {
+    uuid_attribute: 'rda_tiger:F6O3MZWR8VIFL30T0CN0T',
     attribute: 'Storage Infrastructure',
-    tags: 'knowledge and management of storage infrastructure',
+    description: 'knowledge and management of storage infrastructure',
   },
-  { attribute: 'Infrastructure OS', tags: 'base software (infrastructure os)' },
   {
+    uuid_attribute: 'rda_tiger:N8XDNOJE4F84KPWX6AMOT',
+    attribute: 'Infrastructure OS',
+    description: 'base software (infrastructure os)',
+  },
+  {
+    uuid_attribute: 'rda_tiger:RVAF3SLPQ7URQZVG91EC5',
     attribute: 'AAI',
-    tags: 'authentication and authorization infrastructure (aai)',
+    description: 'authentication and authorization infrastructure (aai)',
   },
   {
+    uuid_attribute: 'rda_tiger:P2QQXD02Z0JK9GVL3F4QR',
     attribute: 'Technical',
-    tags: 'mechanisms, infrastructure, and plans in place for technical interoperability* (i.e. artifact exchange)',
+    description:
+      'mechanisms, infrastructure, and plans in place for technical interoperability* (i.e. artifact exchange)',
   },
   {
+    uuid_attribute: 'rda_tiger:I0U93QTUCO66KOLS4M3F3',
     attribute: 'Semantic',
-    tags: 'mechanisms, infrastructure, and plans in place for semantic interoperability* (i.e. interpretation)',
+    description:
+      'mechanisms, infrastructure, and plans in place for semantic interoperability* (i.e. interpretation)',
   },
   {
+    uuid_attribute: 'rda_tiger:0IO2OQDGD5P7U2NGUWRMZ',
     attribute: 'Pragmatic',
-    tags: 'mechanisms, infrastructure, and plans in place for pragmatic interoperability* (i.e. agreements between organizations)',
+    description:
+      'mechanisms, infrastructure, and plans in place for pragmatic interoperability* (i.e. agreements between organizations)',
   },
   {
+    uuid_attribute: 'rda_tiger:BN23HMA2CDFG1Z484FVL8',
     attribute: 'Legal',
-    tags: 'mechanisms, infrastructure, and plans in place for legal interoperability*',
+    description:
+      'mechanisms, infrastructure, and plans in place for legal interoperability*',
   },
   {
+    uuid_attribute: 'rda_tiger:NZ6VEO79HBDO2O7SIS7D0',
     attribute: 'PIDs',
-    tags: 'a proven workflow to connect multiple different research artefact types is built on a persistent identifier infrastructure designed for interoperability*',
+    description:
+      'a proven workflow to connect multiple different research artefact types is built on a persistent identifier infrastructure designed for interoperability*',
   },
   {
+    uuid_attribute: 'rda_tiger:TE1W6XRGIDE6XXU30X5FA',
     attribute: 'Supported Metadata',
-    tags: 'community* supported and well documented metadata* standards such that metadata* fulfills a given purpose',
+    description:
+      'community* supported and well documented metadata* standards such that metadata* fulfills a given purpose',
   },
   {
+    uuid_attribute: 'rda_tiger:TEF6JK8W0GGSJBRL735JI',
     attribute: 'Vocabulary & Ontology',
-    tags: 'vocabulary and ontology standards',
+    description: 'vocabulary and ontology standards',
   },
-  { attribute: 'Research Objects*', tags: 'research object standards' },
   {
+    uuid_attribute: 'rda_tiger:PSIHTDZML90DZ352F7ML4',
+    attribute: 'Research Objects*',
+    description: 'research object standards',
+  },
+  {
+    uuid_attribute: 'rda_tiger:521UETVAU1W0JSVSKTJJ5',
     attribute: 'Service Endpoint Definition',
-    tags: 'defined service endpoints between any combination of humans and machines',
+    description:
+      'defined service endpoints between any combination of humans and machines',
   },
   {
+    uuid_attribute: 'rda_tiger:FOK7BHOHNJPLM3V3QF6V2',
     attribute: 'Authentication & Authorization',
-    tags: 'authentication and authorization protocols',
+    description: 'authentication and authorization protocols',
   },
   {
+    uuid_attribute: 'rda_tiger:P0HQBX7G64RWX0DU9NEB2',
     attribute: 'PID Workflow & Definitions',
-    tags: 'a workflow and standards for adding and maintaining pids for managed assets',
+    description:
+      'a workflow and standards for adding and maintaining pids for managed assets',
   },
   {
+    uuid_attribute: 'rda_tiger:CT6M4BMDEWA39VB6EZXVX',
     attribute: 'Applications & Software',
-    tags: 'applications and software standards, in addition to applicable research object* and metadata* standards',
+    description:
+      'applications and software standards, in addition to applicable research object* and metadata* standards',
   },
   {
+    uuid_attribute: 'rda_tiger:96F0C320W68PMPCAHHFML',
     attribute: 'Commons*-Specific',
-    tags: 'standards* and protocols for all processes, services and tools* offered by the commons*.',
+    description:
+      'standards* and protocols for all processes, services and tools* offered by the commons*.',
   },
   {
+    uuid_attribute: 'rda_tiger:2W58U5S3M8WS5XAHEJW4Q',
     attribute: 'Development Process',
-    tags: 'there exists a process for developing, updating and promoting standards',
+    description:
+      'there exists a process for developing, updating and promoting standards',
   },
   {
+    uuid_attribute: 'rda_tiger:VH45FEL4CAIZKLTGIKSNB',
     attribute: 'DMPs',
-    tags: 'dmp standards, in addition to any applicable research object* and metadata* standards',
+    description:
+      'dmp standards, in addition to any applicable research object* and metadata* standards',
   },
   {
+    uuid_attribute: 'rda_tiger:XRAAAL2UV5BWUT7666FXG',
     attribute: 'Core types definitions',
-    tags: 'definitions of a set of core types of research objects* and services provided by the commons*.',
+    description:
+      'definitions of a set of core types of research objects* and services provided by the commons*.',
   },
   {
+    uuid_attribute: 'rda_tiger:P3PED0XBAAWFDH9614GMP',
     attribute: 'Availability',
-    tags: 'standards* describing the availability of post-print versions* of research objects* in institutional or thematic open access repos',
+    description:
+      'standards* describing the availability of post-print versions* of research objects* in institutional or thematic open access repos',
   },
   {
+    uuid_attribute: 'rda_tiger:0K4QN02HQKG6Q8C5JRH6P',
     attribute: 'Access*',
-    tags: 'standards* for access to information, resources, services, and tools*',
+    description:
+      'standards* for access to information, resources, services, and tools*',
   },
   {
+    uuid_attribute: 'rda_tiger:IQ4XMU0P2JW9C627A33HQ',
     attribute: 'Computational Workflows',
-    tags: 'where computational workflows are used or referenced in provenance* information, these should be captured in a standards-based way',
+    description:
+      'where computational workflows are used or referenced in provenance* information, these should be captured in a standards-based way',
   },
   {
+    uuid_attribute: 'rda_tiger:CLX8LC5JFF190Z7W7CHEM',
     attribute: 'Collections',
-    tags: 'standards* for collections*, in addition to any applicable research object* and metadata* standards',
+    description:
+      'standards* for collections*, in addition to any applicable research object* and metadata* standards',
   },
-  { attribute: 'Research Data Repository*', tags: 'research data repository*' },
   {
+    uuid_attribute: 'rda_tiger:F542WA9FVHE0O7CQB1XPT',
+    attribute: 'Research Data Repository*',
+    description: 'research data repository*',
+  },
+  {
+    uuid_attribute: 'rda_tiger:ENC1ZOAEK7B7URK0IIK80',
     attribute: 'Publication & Research Documentation Repository*',
-    tags: 'a publication and research documentation repository*, specifically for peer-reviewed articles, reports, and notes. (i.e. research findings available to the wider academic community* and beyond.) that have been provided by the commons community*',
+    description:
+      'a publication and research documentation repository*, specifically for peer-reviewed articles, reports, and notes. (i.e. research findings available to the wider academic community* and beyond.) that have been provided by the commons community*',
   },
   {
+    uuid_attribute: 'rda_tiger:1S1X5XL0BFUONQV33M3PO',
     attribute: 'Research Software Repository*',
-    tags: 'research software repository*',
+    description: 'research software repository*',
   },
-  { attribute: 'Vocabulary Repository*', tags: 'vocabulary repository*' },
   {
+    uuid_attribute: 'rda_tiger:WXIHHWMW4KCGKQ3VQB7FV',
+    attribute: 'Vocabulary Repository*',
+    description: 'vocabulary repository*',
+  },
+  {
+    uuid_attribute: 'rda_tiger:0NHUKAOP0NCP55OTH0FZ8',
     attribute: 'Harvesting & Integration',
-    tags: 'harvesting, or aggregating, and integrating research objects*, metadata*, services and tools* from external repositories and commons*, including members* and providers*',
+    description:
+      'harvesting, or aggregating, and integrating research objects*, metadata*, services and tools* from external repositories and commons*, including members* and providers*',
   },
   {
+    uuid_attribute: 'rda_tiger:P756ENTMIHAUQJJMFB4PV',
     attribute: 'Cataloging & Inventory',
-    tags: 'a process to inventory research objects* and services to create and add to an open, searchable commons* catelogue that will include pointers to other types of catalogues or collections* and services',
+    description:
+      'a process to inventory research objects* and services to create and add to an open, searchable commons* catelogue that will include pointers to other types of catalogues or collections* and services',
   },
   {
+    uuid_attribute: 'rda_tiger:BBTEQC7LNB4JRKBXMUUL9',
     attribute: 'Service Marketplace',
-    tags: 'a marketplace or api for external service providers* to access and add their services, such that an interoperable interface is available to third party services from the perspective of users* and creates a service catelogue',
+    description:
+      'a marketplace or api for external service providers* to access and add their services, such that an interoperable interface is available to third party services from the perspective of users* and creates a service catelogue',
   },
   {
+    uuid_attribute: 'rda_tiger:9D41I6P97NK6M1LQX5LF9',
     attribute: 'Data Acquisition',
-    tags: 'digital object*, research object, and data acquisition',
+    description: 'digital object*, research object, and data acquisition',
   },
   {
+    uuid_attribute: 'rda_tiger:BJ02UUD11JX18DPKJWRBZ',
     attribute: 'Metadata Quality Control',
-    tags: 'provide integrity and quality control mechanisms for metadata*, including immutiability',
+    description:
+      'provide integrity and quality control mechanisms for metadata*, including immutiability',
   },
   {
+    uuid_attribute: 'rda_tiger:5WWIVF2RK81PZ43EVDBRC',
     attribute: 'Research Object* Quality Control',
-    tags: 'provide integrity and quality control mechanisms for research objects*',
+    description:
+      'provide integrity and quality control mechanisms for research objects*',
   },
   {
+    uuid_attribute: 'rda_tiger:4OZ40WHZZKIFLKAE3KN0N',
     attribute: 'Data Management',
-    tags: 'digital object*, research object, and data management',
+    description: 'digital object*, research object, and data management',
   },
   {
+    uuid_attribute: 'rda_tiger:R9IBPN1H9R1E4BFL6Q6HO',
     attribute: 'Vocabulary Utilization',
-    tags: 'a mechanism for utilizing vocabulary services',
+    description: 'a mechanism for utilizing vocabulary services',
   },
   {
+    uuid_attribute: 'rda_tiger:2CZ8D1SKU9W8H3EXJCXM4',
     attribute: 'Types Registration',
-    tags: 'a system to register types of research objects*, services and tools* that may not already be present in the commons*.',
+    description:
+      'a system to register types of research objects*, services and tools* that may not already be present in the commons*.',
   },
   {
+    uuid_attribute: 'rda_tiger:J2JZGNZCLS8J3K9RAXO82',
     attribute: 'Harvestable Metadata',
-    tags: 'provide a harvestable metadata* service so that others can harvest metadata* hosted by the commons* that describes research objects*, services, and tools*.',
+    description:
+      'provide a harvestable metadata* service so that others can harvest metadata* hosted by the commons* that describes research objects*, services, and tools*.',
   },
   {
+    uuid_attribute: 'rda_tiger:P3QJEPZM4ZSAQCVV01GRF',
     attribute: 'Usage Statistics',
-    tags: 'expose research object* usage statistics so that they are publicly viewable on the research object* landing page, spanning access and downloads',
+    description:
+      'expose research object* usage statistics so that they are publicly viewable on the research object* landing page, spanning access and downloads',
   },
   {
+    uuid_attribute: 'rda_tiger:6R1WWF96AROZQIXA8OWKB',
     attribute: 'SaaS',
-    tags: 'software as a service* (saas), or an applications catelogue, supported by the commons* open source program office (ospo)',
+    description:
+      'software as a service* (saas), or an applications catelogue, supported by the commons* open source program office (ospo)',
   },
   {
+    uuid_attribute: 'rda_tiger:8QJXFTO77QIJWKCQ4DD24',
     attribute: 'PaaS',
-    tags: 'platform as a service* (paas) (i.e. a space to deploy, develop and use software packages and libraries)',
+    description:
+      'platform as a service* (paas) (i.e. a space to deploy, develop and use software packages and libraries)',
   },
   {
+    uuid_attribute: 'rda_tiger:C0N8OFCL01LJUTRV5ALMF',
     attribute: 'Processing & Visualization',
-    tags: 'processing and visualization',
+    description: 'processing and visualization',
   },
   {
+    uuid_attribute: 'rda_tiger:73AJTKOXF6O4XB7ZPZRB8',
     attribute: 'RDM-Dedicated',
-    tags: 'dedicated research data management services and tools*, outside of training events and workshops.',
+    description:
+      'dedicated research data management services and tools*, outside of training events and workshops.',
   },
   {
+    uuid_attribute: 'rda_tiger:UX2RKR7TVKRA5U1FGDVCS',
     attribute: 'Security & ID',
-    tags: 'securtiy and identification services, authenticaion and authorization (aai)',
+    description:
+      'securtiy and identification services, authenticaion and authorization (aai)',
   },
   {
+    uuid_attribute: 'rda_tiger:TZN5D0L67BGJZP2UB1KCN',
     attribute: 'Repository API',
-    tags: 'api for automated execution of standard repository* tasks and to interoperate with external services and tools* useful to the stakeholders*',
+    description:
+      'api for automated execution of standard repository* tasks and to interoperate with external services and tools* useful to the stakeholders*',
   },
   {
+    uuid_attribute: 'rda_tiger:8JP3SV27A1HCTEVBXMP67',
     attribute: 'User Accessibility',
-    tags: 'considerations for the displayed, user*-facing accessibility and reusability of research objects* held by and discoverable through the research commons*.',
+    description:
+      'considerations for the displayed, user*-facing accessibility and reusability of research objects* held by and discoverable through the research commons*.',
   },
   {
+    uuid_attribute: 'rda_tiger:77SCGFXAA8E3IPD8AA72E',
     attribute: 'Research Object Discovery',
-    tags: 'considerations for what research objects* are held by and discoverable through the commons*',
+    description:
+      'considerations for what research objects* are held by and discoverable through the commons*',
   },
 ];
 
