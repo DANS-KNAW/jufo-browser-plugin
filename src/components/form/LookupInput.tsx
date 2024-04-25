@@ -83,6 +83,7 @@ function ComboInput({
               onChange={(event) => setQuery(event.target.value)}
               id={internalIDs}
               placeholder={placeholder}
+              required={required}
             />
             <Combobox.Button className="absolute inset-y-0 right-0 -mr-2 flex items-center border-l p-2 focus:outline-none disabled:cursor-not-allowed disabled:bg-gray-200">
               <ChevronDownIcon
