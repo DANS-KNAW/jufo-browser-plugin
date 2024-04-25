@@ -64,7 +64,6 @@ function Annotation({
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSubmitting(true);
-    console.log(formData);
 
     const response = await fetch('http://49.12.1.231:3001', {
       method: 'POST',
@@ -344,9 +343,11 @@ function Annotation({
               onChange={handleChange}
               rounded="middle"
               dataset={workingGroups.map((workingGroup) => ({
-                id: workingGroup.g_UUID,
-                label: workingGroup.Title,
-                value: workingGroup.g_UUID,
+                id: workingGroup.uuid_interestgroup,
+                label: workingGroup.title,
+                value: workingGroup.uuid_interestgroup,
+                description: workingGroup.description,
+                url: workingGroup.url,
               }))}
               multiple
               disabled={submitting}
