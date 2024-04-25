@@ -277,11 +277,11 @@ function Annotation({
               label="Pathways"
               onChange={handleChange}
               rounded="top"
-              dataset={pathways.map((pathway, index) => ({
-                id: `${index}`,
-                label: pathway.tags,
-                description: pathway.pathway,
-                value: pathway.tags,
+              dataset={pathways.map((pathway) => ({
+                id: pathway.uuid_pathway,
+                label: pathway.pathway,
+                description: pathway.description,
+                value: pathway.uuid_pathway,
               }))}
               multiple
               disabled={submitting}
