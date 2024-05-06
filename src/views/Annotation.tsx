@@ -65,7 +65,7 @@ function Annotation({
     event.preventDefault();
     setSubmitting(true);
 
-    const response = await fetch("http://localhost:3001", {
+    const response = await fetch("http://49.12.1.231:3001", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -149,7 +149,7 @@ function Annotation({
             dataset={language.map((l, i) => ({
               id: `${i}`,
               label: l.label,
-              value: l.value,
+              value: l.label,
             }))}
             disabled={submitting}
           />
@@ -360,9 +360,9 @@ function Annotation({
               onChange={handleChange}
               rounded="bottom"
               dataset={domains.map((domain) => ({
-                id: domain.uuid,
-                label: domain.domain,
-                value: domain.uuid,
+                id: domain.UUID,
+                label: domain["List Item"],
+                value: domain.Description,
               }))}
               multiple
               disabled={submitting}
