@@ -87,28 +87,28 @@ function App() {
         <main className="flex h-screen w-full flex-col">
           <TabView>
             {activeTab === 'Annotation' && !annotation && (
-              <div className="mt-8 w-full rounded-lg border border-red-400 bg-white p-6 px-4 pb-4 pt-5 text-left">
+              <div className="mt-8 w-full rounded-lg border border-rda-400 bg-white p-6 px-4 pb-4 pt-5 text-left">
                 <div className="flex items-start">
-                  <div className="mx-0 flex size-10 shrink-0 items-center justify-center rounded-full bg-red-100">
+                  <div className="mx-0 flex size-10 shrink-0 items-center justify-center rounded-full bg-rda-100">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
-                      strokeWidth="1.5"
+                      strokeWidth={1.5}
                       stroke="currentColor"
-                      className="size-6 text-red-600"
+                      className="size-6 text-rda-600"
                       aria-hidden="true"
                     >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z"
+                        d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"
                       />
                     </svg>
                   </div>
                   <div className="ml-4 mt-0 text-left">
                     <h3 className="text-base font-semibold leading-6 text-gray-900">
-                      No Annotation Found!
+                      Select text to annotate
                     </h3>
                     <div className="mt-2">
                       <p className="text-sm text-gray-500">

@@ -1,7 +1,7 @@
-import React, { useContext, useState } from "react";
-import AreaInput from "../components/AreaInput";
-import ComboInput from "../components/form/LookupInput";
-import TextInput from "../components/form/TextInput";
+import React, { useContext, useState } from 'react';
+import AreaInput from '../components/AreaInput';
+import ComboInput from '../components/form/LookupInput';
+import TextInput from '../components/form/TextInput';
 import {
   language,
   pathways,
@@ -10,8 +10,8 @@ import {
   interestgroups,
   domains,
   workingGroups,
-} from "../data/data";
-import { SettingsContext } from "../context/Settings";
+} from '../data/data';
+import { SettingsContext } from '../context/Settings';
 
 interface AnnotationSchema {
   page_url: string;
@@ -50,7 +50,7 @@ function Annotation({
   const { settings } = useContext(SettingsContext);
   const [formData, setFormData] = useState<{ [key: string]: any }>();
   const [submitting, setSubmitting] = useState(false);
-  const [success, setSuccess] = useState<"NONE" | "FAILED" | "SUCCESS">("NONE");
+  const [success, setSuccess] = useState<'NONE' | 'FAILED' | 'SUCCESS'>('NONE');
 
   const handleChange = (name: string, value: any) => {
     setFormData((prevState: any) => ({
@@ -59,17 +59,17 @@ function Annotation({
     }));
   };
 
-  const currentDate = new Date().toISOString().split("T")[0];
+  const currentDate = new Date().toISOString().split('T')[0];
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSubmitting(true);
 
-    const response = await fetch("http://49.12.1.231:3001", {
-      method: "POST",
+    const response = await fetch('http://49.12.1.231:3001', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
-        "x-api-key": "wD6nYiHPbsKzHEKrWGXzCxvYBcGbTd",
+        'Content-Type': 'application/json',
+        'x-api-key': 'wD6nYiHPbsKzHEKrWGXzCxvYBcGbTd',
       },
       body: JSON.stringify({
         page_url: tabUrl,
@@ -79,7 +79,7 @@ function Annotation({
           title: formData?.title,
           description: formData?.description,
           notes: formData?.notes,
-          submitter: "",
+          submitter: '',
           language: formData?.language,
           created_at: formData?.created_at,
           resource: tabUrl,
@@ -94,7 +94,7 @@ function Annotation({
         },
       } as AnnotationSchema),
     });
-    setSuccess(response.ok ? "SUCCESS" : "FAILED");
+    setSuccess(response.ok ? 'SUCCESS' : 'FAILED');
   };
 
   const { vocabularies } = settings;
@@ -170,91 +170,91 @@ function Annotation({
             rounded="middle"
             dataset={[
               {
-                id: "rda_graph:4F1865F2",
-                label: "Concept",
-                value: "rda_graph:4F1865F2",
+                id: 'rda_graph:4F1865F2',
+                label: 'Concept',
+                value: 'rda_graph:4F1865F2',
                 description:
-                  "A URI to a page describing a concept (vocabulary item, glossary item, ...)",
+                  'A URI to a page describing a concept (vocabulary item, glossary item, ...)',
               },
               {
-                id: "rda_graph:4D261960",
-                label: "Infrastructure",
-                value: "rda_graph:4D261960",
+                id: 'rda_graph:4D261960',
+                label: 'Infrastructure',
+                value: 'rda_graph:4D261960',
                 description:
-                  "A URI to a consortium or national infrastructure for research or digital research services",
+                  'A URI to a consortium or national infrastructure for research or digital research services',
               },
               {
-                id: "rda_graph:5DEEF0C7",
-                label: "Initiative",
-                value: "rda_graph:5DEEF0C7",
+                id: 'rda_graph:5DEEF0C7',
+                label: 'Initiative',
+                value: 'rda_graph:5DEEF0C7',
                 description:
-                  "A URI to a page describing an initiative, network, federation, or group with a common interest",
+                  'A URI to a page describing an initiative, network, federation, or group with a common interest',
               },
               {
-                id: "rda_graph:59F2DD8F",
-                label: "News",
-                value: "rda_graph:59F2DD8F",
-                description: "A URI to a news item",
+                id: 'rda_graph:59F2DD8F',
+                label: 'News',
+                value: 'rda_graph:59F2DD8F',
+                description: 'A URI to a news item',
               },
               {
-                id: "rda_graph:A11C41C",
-                label: "Opinion",
-                value: "rda_graph:A11C41C",
+                id: 'rda_graph:A11C41C',
+                label: 'Opinion',
+                value: 'rda_graph:A11C41C',
                 description:
-                  "A URI to a blog post, discussion forum, social media thread, or points of view on a topic",
+                  'A URI to a blog post, discussion forum, social media thread, or points of view on a topic',
               },
               {
-                id: "rda_graph:D2BC195C",
-                label: "Organisation",
-                value: "rda_graph:D2BC195C",
+                id: 'rda_graph:D2BC195C',
+                label: 'Organisation',
+                value: 'rda_graph:D2BC195C',
                 description:
-                  "A URI to a page describing an organisation, institution, consortium, or other legal entity, including government entities",
+                  'A URI to a page describing an organisation, institution, consortium, or other legal entity, including government entities',
               },
               {
-                id: "rda_graph:BC258428",
-                label: "Other",
-                value: "rda_graph:BC258428",
-                description: "Any other resource in the web",
+                id: 'rda_graph:BC258428',
+                label: 'Other',
+                value: 'rda_graph:BC258428',
+                description: 'Any other resource in the web',
               },
               {
-                id: "rda_graph: 4D261960",
-                label: "Project",
-                value: "rda_graph: 4D261960",
-                description: "A URI to a project or programme",
+                id: 'rda_graph: 4D261960',
+                label: 'Project',
+                value: 'rda_graph: 4D261960',
+                description: 'A URI to a project or programme',
               },
               {
-                id: "rda_graph:51B3E91F",
-                label: "Publication",
-                value: "rda_graph:51B3E91F",
+                id: 'rda_graph:51B3E91F',
+                label: 'Publication',
+                value: 'rda_graph:51B3E91F',
                 description:
-                  "Any of a number of sub-categories, as defined by info_types and used in Zenodo",
+                  'Any of a number of sub-categories, as defined by info_types and used in Zenodo',
               },
               {
-                id: "rda_graph:6951DB96",
-                label: "Recommendation",
-                value: "rda_graph:6951DB96",
+                id: 'rda_graph:6951DB96',
+                label: 'Recommendation',
+                value: 'rda_graph:6951DB96',
                 description:
-                  "A URI to a recommendation in respect of standards, best practices, or similar",
+                  'A URI to a recommendation in respect of standards, best practices, or similar',
               },
               {
-                id: "rda_graph:9D161303",
-                label: "Requirements",
-                value: "rda_graph:9D161303",
+                id: 'rda_graph:9D161303',
+                label: 'Requirements',
+                value: 'rda_graph:9D161303',
                 description:
-                  "A URI to requirements or community expectations in respect of performance, benchmarks, and norms",
+                  'A URI to requirements or community expectations in respect of performance, benchmarks, and norms',
               },
               {
-                id: "rda_graph:FB3739CC",
-                label: "Service",
-                value: "rda_graph:FB3739CC",
+                id: 'rda_graph:FB3739CC',
+                label: 'Service',
+                value: 'rda_graph:FB3739CC',
                 description:
-                  "A URI to a service, registry, repository, archive, or API that can assist with RDMI workflows, ir serves as an example",
+                  'A URI to a service, registry, repository, archive, or API that can assist with RDMI workflows, ir serves as an example',
               },
               {
-                id: "rda_graph:FF51944E",
-                label: "Specification",
-                value: "rda_graph:FF51944E",
-                description: "A URI to a specification or standard",
+                id: 'rda_graph:FF51944E',
+                label: 'Specification',
+                value: 'rda_graph:FF51944E',
+                description: 'A URI to a specification or standard',
               },
             ]}
           />
@@ -361,7 +361,7 @@ function Annotation({
               rounded="bottom"
               dataset={domains.map((domain) => ({
                 id: domain.UUID,
-                label: domain["List Item"],
+                label: domain['List Item'],
                 value: domain.Description,
               }))}
               multiple
@@ -370,25 +370,30 @@ function Annotation({
           )}
         </div>
 
-        <button
-          type="submit"
-          // disabled={
-          //   submitting ||
-          //   settings.customHypothesisKey === "" ||
-          //   settings.useCustomHypothesisKey === false ||
-          //   settings.mirrorHypothesis === false
-          // }
-          disabled={submitting}
-          className="w-full rounded-md bg-rda-500 px-4 py-2 text-xl font-bold text-white hover:bg-rda-400 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-rda-500"
-        >
-          {success === "NONE"
-            ? submitting
-              ? "Submited"
-              : "Submit"
-            : success === "SUCCESS"
-            ? "Successfully Annotated"
-            : "Failed to Annotate"}
-        </button>
+        <div className="flex space-x-2">
+          <button className="w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-xl font-bold text-gray-900 hover:bg-gray-200 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-gray-500">
+            Save Draft
+          </button>
+          <button
+            type="submit"
+            // disabled={
+            //   submitting ||
+            //   settings.customHypothesisKey === "" ||
+            //   settings.useCustomHypothesisKey === false ||
+            //   settings.mirrorHypothesis === false
+            // }
+            disabled={submitting}
+            className="w-full rounded-md bg-rda-500 px-4 py-2 text-xl font-bold text-white hover:bg-rda-400 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-rda-500"
+          >
+            {success === 'NONE'
+              ? submitting
+                ? 'Submited'
+                : 'Submit'
+              : success === 'SUCCESS'
+                ? 'Successfully Annotated'
+                : 'Failed to Annotate'}
+          </button>
+        </div>
       </form>
     </>
   );
